@@ -6,6 +6,7 @@ const sequelize = require("./config/connection");
 //connect to the available port if not specified use port 3000
 const PORT = process.env.PORT || 3003;
 
+const Model = require("./models");
 
 //to connect to port using express
 sequelize.sync({ force: false }).then(() => {
