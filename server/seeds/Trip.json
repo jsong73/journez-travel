@@ -1,0 +1,38 @@
+[
+    {
+        "trip_name": "Cousin Trip",
+        "user_id": 1,
+        "activity_id": 1,
+        "transportation_id": 1,
+        "flight_id": 1,
+        "hotel_id": 1, 
+        "restaurant_id": 1
+    },
+    {
+        "trip_name": "BFF Trip",
+        "user_id": 2,
+        "activity_id": 2,
+        "transportation_id": 2,
+        "flight_id": 2,
+        "hotel_id": 2, 
+        "restaurant_id": 2
+    },
+    {
+        "trip_name": "SO Trip",
+        "user_id": 3,
+        "activity_id": 3,
+        "transportation_id": 3,
+        "flight_id": 3,
+        "hotel_id": 3, 
+        "restaurant_id": 3
+    },
+    {
+        "trip_name": "Family Trip",
+        "user_id": 4,
+        "activity_id": 3,
+        "transportation_id": 4,
+        "flight_id": 4,
+        "hotel_id": 4, 
+        "restaurant_id": 4
+    }
+]

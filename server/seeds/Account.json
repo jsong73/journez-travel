@@ -1,0 +1,34 @@
+[
+    {
+        "username": "juhuyoon",
+        "email": "juhuyoon@yahoo.com",
+        "password": "Root1234",
+        "first_name": "Junghoon",
+        "last_name": "Yoon",
+        "payment_info": "Venmo"
+    },
+    {
+        "username": "jsong73",
+        "email": "jessicasong@gmail.com",
+        "password": "Password1234",
+        "first_name": "Jessica",
+        "last_name": "Song",
+        "payment_info": "CashApp"
+    },
+    {
+        "username": "woorijadoo",
+        "email": "jennifersong@gmail.com",
+        "password": "DuckGoQwack",
+        "first_name": "Jennifer",
+        "last_name": "Song",
+        "payment_info": "Venmo"
+    },
+    {
+        "username": "jae96",
+        "email": "jae@gmail.com",
+        "password": "Root1234",
+        "first_name": "Jae Hyuk",
+        "last_name": "Yoon",
+        "payment_info": "Wells Fargo"
+    }
+]

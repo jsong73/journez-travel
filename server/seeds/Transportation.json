@@ -1,0 +1,26 @@
+[
+    {
+        "transportation": "Boat",
+        "ride_date": "2022-12-30",
+        "ride_cost": 690.42,
+        "paid_in_full": true
+    },
+    {
+        "transportation": "Uber",
+        "ride_date": "2022-10-15",
+        "ride_cost": 150.15,
+        "paid_in_full": false
+    },
+    {
+        "transportation": "Motorcycle",
+        "ride_date": "2022-10-15",
+        "ride_cost": 15.15,
+        "paid_in_full": false
+    },
+    {
+        "transportation": "Bus",
+        "ride_date": "2022-12-30",
+        "ride_cost": 5.00,
+        "paid_in_full": true
+    }
+]

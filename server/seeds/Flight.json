@@ -1,0 +1,35 @@
+[
+    {
+        "airline": "Delta",
+        "flight_date": "2022-11-19",
+        "flight_time": "15:13:00",
+        "seat_number": "5F",
+        "flight_cost": 200.54,
+        "paid_in_full": true
+
+    },
+    {
+        "airline": "American Airlines",
+        "flight_date": "2022-10-20",
+        "flight_time": "07:13:00",
+        "seat_number": "15E",
+        "flight_cost": 300.15,
+        "paid_in_full": false
+    },
+   {
+        "airline": "Signal",
+        "flight_date": "2023-01-15",
+        "flight_time": "22:13:00",
+        "seat_number": "1A",
+        "flight_cost": 70.50,
+        "paid_in_full": false
+    },
+    {
+        "airline": "Spirit",
+        "flight_date": "2010-11-19",
+        "flight_time": "07:13:00",
+        "seat_number": "22E",
+        "flight_cost": 75.15,
+        "paid_in_full": true
+    }
+]

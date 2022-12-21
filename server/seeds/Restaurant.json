@@ -1,0 +1,26 @@
+[
+    {
+        "restaurant": "Cote",
+        "dining_date": "2022-10-15",
+        "bill_amount": 450.83,
+        "paid_in_full": false
+    },
+    {
+        "restaurant": "Rumi's Kitchen",
+        "dining_date": "2022-12-15",
+        "bill_amount": 200.15,
+        "paid_in_full": true
+    },
+    {
+        "restaurant": "Chilis",
+        "dining_date": "2022-12-10",
+        "bill_amount": 100.00,
+        "paid_in_full": true
+    },
+    {
+        "restaurant": "McDonalds",
+        "dining_date": "2022-12-10",
+        "bill_amount": 30.50,
+        "paid_in_full": true
+    }
+]
