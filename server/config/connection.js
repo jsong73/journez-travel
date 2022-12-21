@@ -9,6 +9,7 @@ const sequelize = new Sequelize(
     {
         host: "localhost",
         dialect: "mysql",
+        //mysql default port
         port: "3306"
     }
 );
