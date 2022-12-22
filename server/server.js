@@ -8,6 +8,9 @@ const PORT = process.env.PORT || 3003;
 
 const Model = require("./models");
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true })); 
+
 //to connect to port using express
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, (err) => console.log(`listening to port ${PORT}`));
