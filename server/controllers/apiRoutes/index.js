@@ -14,3 +14,5 @@ router.use("/flight", flightRoutes);
 router.use("/hotel", hotelRoutes);
 router.use("/restaurant", restaurantRoutes);
 router.use("/transportation", transportationRoutes);
+
+module.exports = router;
