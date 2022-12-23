@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
         const activity = activityData.map((data) => data.get({ plain: true }));
         res.status(200).json(activity);
         console.log(activity);
-    } catch (err) {
+    } catch(err) {
         res.status(500).json(err)
     }
 });

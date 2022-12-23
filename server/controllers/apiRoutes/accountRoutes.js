@@ -13,7 +13,7 @@ const { Account } = require("../../models");
                 .status(200)
                 .json({msg: "Account was successfully created!", accountData});
          });
-    } catch (err) {
+    } catch(err){
         res.status(400).json(err);
     }
  });
@@ -45,7 +45,7 @@ const { Account } = require("../../models");
             req.session.loggedIn = true;
             req.status(200).json({ msg: "You are now logged in!", accountData });
         });
-    } catch (err) {
+    } catch(err){
         res.status(500).json(err);
     }
  });

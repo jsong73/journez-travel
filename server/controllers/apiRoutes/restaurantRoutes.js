@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
         const restaurant = restaurantData.map((data) => data.get({ plain: true }));
         res.status(200).json(restaurant);
         console.log(restaurant);
-    } catch (err){
+    } catch(err){
         res.status(500).json(err)
     }
 });

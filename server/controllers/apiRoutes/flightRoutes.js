@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
         const flight = flightData.map((data) => data.get({ plain: true }));
         res.status(200).json(flight);
         console.log(flight);
-    } catch (err) {
+    } catch(err) {
         res.status(500).json(err)
     }
 });
