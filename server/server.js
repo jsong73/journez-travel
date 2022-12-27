@@ -40,3 +40,4 @@ app.use(session(sess));
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, (err) => console.log(`listening to port ${PORT}`));
 })
+
