@@ -29,8 +29,13 @@ const tripSchema = new Schema(
             deafult: Date.now,
             get: (timestamp) => dateFormat(timestamp),
         },
-    }
-)
+        schedules: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: "Schedule",
+            },
+        ],
+    });
 
 const Trip = model("Trip", tripSchema);
 
