@@ -1,18 +1,16 @@
 const { Schema, model } = require("mongoose");
 const dateFormat = require("../utils/dateFormat");
 
-const tripSchema = new Schema(
+const itinerarySchema = new Schema( 
     {
-        tripName: {
+        category: {
+            type: String,
+            required: true,
+        },
+        name: {
             type: String,
             required: true,
             trim: true,
-        },
-        description: {
-            type: String,
-            required: true,
-            maxlength: 280,
-            minlength: 1,
         },
         location: {
             type: String,
@@ -29,14 +27,14 @@ const tripSchema = new Schema(
             deafult: Date.now,
             get: (timestamp) => dateFormat(timestamp),
         },
-        itineraries: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: "Itinerary",
-            },
-        ],
+        notes:{
+            type: String,
+        },
+        status: {
+            type: Boolean,
+        },
     });
 
-const Trip = model("Trip", tripSchema);
+    const Itinerary = model("Itinerary", itinerarySchema);
 
-module.exports = Trip;
+    module.exports = Itinerary;
