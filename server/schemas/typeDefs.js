@@ -22,7 +22,7 @@ type Trip {
 type Itinerary {
     _id: ID
     category: String
-    name: String
+    categoryName: String
     location: String
     startDate: String
     endDate: String
@@ -72,7 +72,7 @@ type Mutation {
     addItinerary(
        tripId: ID
        category: String
-       name: String
+       categoryName: String
        location: String
        startDate: String
        endDate: String
@@ -83,7 +83,7 @@ type Mutation {
 
     updateItinerary(
         itineraryId: ID
-        name: String
+        categoryName: String
         location: String
         startDate: String
         endDate: String

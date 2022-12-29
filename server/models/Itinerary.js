@@ -7,7 +7,7 @@ const itinerarySchema = new Schema(
             type: String,
             required: true,
         },
-        name: {
+        categoryName: {
             type: String,
             required: true,
             trim: true,

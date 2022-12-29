@@ -33,9 +33,68 @@ const resolvers = {
         },
     },
 
-    // Mutation: {
+    Mutation: {
+        //add user
+        addUser: async (parent, { username, email, password }) => {
+            const user = await User.create({ username, email, password });
+            return { user };
+        },
+        //log in 
+        login: async (parent, { email, password }) => {
+            const user = await User.findOne({ email });
 
-    // }
+            if (!user) {
+                throw new AuthenticationError("No user found with this email!");
+            }
+
+            const correctPw = await user.isCorrectPassword(password);
+
+            if(!correctPw) {
+                throw new AuthenticationError("Incorrect credentials!");
+            }
+            return { user };
+        },
+        //add trip
+        addTrip: async (parent, { userId, tripName, description, location, startDate, endDate }, context) => {
+            // if (context.user) {
+            const trip = await Trip.create({
+                tripName, 
+                description,
+                location,
+                startDate,
+                endDate,
+            });
+            await User.findOneAndUpdate(
+                { _id: userId},
+                { $addToSet: { trips: trip._id}}
+            );
+            return trip;
+        },
+        //update trip
+        updateTrip: async (parent, { tripId, tripName, description, location, startDate, endDate }) => {
+            return await Trip.findOneAndUpdate(
+                { _id: tripId },
+                {$set: { tripName, description, location, startDate, endDate }, },
+                { new: true }
+            );
+        },
+        //remove trip
+        removeTrip: async (parent, { tripId }) => {
+            return Trip.findOneAndDelete({ _id: tripId });
+        },
+        //add itinerary
+        addItinerary: async (parent, { tripId, category, categoryName, location, startDate, endDate, price, notes, paid }, context) => {
+        // if (context.user) {
+            const itinerary = await Itinerary.create({ category, categoryName, location, startDate, endDate, price, notes, paid });
+
+            await Trip.findOneAndUpdate(
+                { _id: tripId },
+                { $addToSet: { itineraries: itinerary._id }}
+            );
+            return itinerary;
+        }
+
+    }
 
 }
 
