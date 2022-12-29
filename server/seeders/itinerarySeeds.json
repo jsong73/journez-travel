@@ -1,0 +1,53 @@
+[
+    {
+      "category": "Activity",
+      "categoryName": "Clubbing",
+      "location": "3131 Las Vegas Blvd S, Las Vegas, NV 89109",
+      "startDate": "7/3/2023",
+      "endDate": "7/3/2023",
+      "price": "100.00",
+      "notes": "",
+      "paid": "true"
+    },
+    {
+      "category": "Flight",
+      "categoryName": "Delta",
+      "location": "LAX",
+      "startDate": "7/3/2023",
+      "endDate": "7/3/2023",
+      "price": "230.60",
+      "notes": "",
+      "paid": "true"
+    },
+    {
+      "category": "Hotel",
+      "categoryName": "The Wynn",
+      "location": "3131 Las Vegas Blvd S, Las Vegas, NV 89109",
+      "startDate": "7/3/2023",
+      "endDate": "7/5/2023",
+      "price": "650.50",
+      "notes": "",
+      "paid": "false"
+    },
+    {
+      "category": "Restaurant",
+      "categoryName": "Harlo Steakhouse & Bar",
+      "location": "1720 Festival Plaza Dr, Las Vegas, NV 89135",
+      "startDate": "7/4/2023",
+      "endDate": "7/4/2023",
+      "price": "98.60",
+      "notes": "",
+      "paid": "true"
+    },
+    {
+        "category": "Transportation",
+        "categoryName": "Jessica's 26th birthday in Vegas",
+        "location": "Uber",
+        "startDate": "7/3/2023",
+        "endDate": "7/5/2023",
+        "price": "35.00",
+        "notes": "",
+        "paid": "true"
+      }    
+  ]
+  

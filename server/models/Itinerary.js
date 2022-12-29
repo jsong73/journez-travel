@@ -14,7 +14,6 @@ const itinerarySchema = new Schema(
         },
         location: {
             type: String,
-            required: true,
             trim: true,
         },
         startDate: {
