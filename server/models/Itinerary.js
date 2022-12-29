@@ -27,11 +27,15 @@ const itinerarySchema = new Schema(
             deafult: Date.now,
             get: (timestamp) => dateFormat(timestamp),
         },
+        price: {
+            type: Number,
+        },
         notes:{
             type: String,
         },
-        status: {
+        paid: {
             type: Boolean,
+            default: true,
         },
     });
 
