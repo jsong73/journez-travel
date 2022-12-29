@@ -17,9 +17,9 @@ const server = new ApolloServer({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); 
 
-// const startApolloServer = async (typeDefs, resolvers) => {
-//   await server.start();
-//   server.applyMiddleware({ app });
+const startApolloServer = async (typeDefs, resolvers) => {
+  await server.start();
+  server.applyMiddleware({ app });
 
   db.once("open", () => {
     app.listen(PORT, () => {
@@ -28,7 +28,7 @@ app.use(express.urlencoded({ extended: true }));
       );
     });
   });
-// };
+};
 
 // Call the async function to start the server
-// startApolloServer(typeDefs, resolvers);
+startApolloServer(typeDefs, resolvers);
