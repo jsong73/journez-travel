@@ -92,10 +92,25 @@ const resolvers = {
                 { $addToSet: { itineraries: itinerary._id }}
             );
             return itinerary;
-        }
-
-    }
-
-}
+        },
+        //update itinerary
+        updateItinerary: async (parent, { itineraryId, category, categoryName, location, startDate, endDate, price, notes, paid }) => {
+            return await Itinerary.findOneAndUpdate(
+                {_id: itineraryId},
+                {$set: {category, categoryName, location, startDate, endDate, price, notes, paid }, },
+                { new: true }
+            );
+        },
+        //remove itinerary
+        removeItinerary: async (parent, {tripId, itineraryId }) => {
+            return await Trip.findOneAndUpdate(
+                {_id: tripId},
+                // $eq matches documents where the value of a field equals the specified value
+                {$pull: {itineraries: { $eq: itineraryId }}},
+                {new: true}
+            );
+        },
+    },
+};
 
 module.exports = resolvers; 
