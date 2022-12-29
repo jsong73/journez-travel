@@ -1,0 +1,24 @@
+[
+    {
+      "tripName": "Jessica's birthday",
+      "description": "Jessica's 26th birthday in Vegas",
+      "location": "Las Vegas",
+      "startDate": "7/3/2023",
+      "endDate": "7/5/2023"
+    },
+    {
+      "tripName": "Girls Trip",
+      "description": "Annual cousins trip",
+      "location": "Miami",
+      "startDate": "1/10/2023",
+      "endDate": "1/15/2023"
+    },
+    {
+      "tripName": "Graduation Vacation",
+      "description": "End of year vacation",
+      "location": "Italy",
+      "startDate": "12/20/2023",
+      "endDate": "12/29/2023"
+    }
+  ]
+  
