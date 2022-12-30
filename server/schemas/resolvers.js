@@ -1,5 +1,6 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { User, Trip, Itinerary } = require("../models");
+const { signToken } = require("../utils/auth");
 
 
 const resolvers = {
@@ -37,7 +38,8 @@ const resolvers = {
         //add user
         addUser: async (parent, { username, email, password }) => {
             const user = await User.create({ username, email, password });
-            return { user };
+            const token = signToken(user);
+            return { user, token };
         },
         //log in 
         login: async (parent, { email, password }) => {
@@ -52,7 +54,8 @@ const resolvers = {
             if(!correctPw) {
                 throw new AuthenticationError("Incorrect credentials!");
             }
-            return { user };
+            const token = signToken(user);
+            return { user, token };
         },
         //add trip
         addTrip: async (parent, { userId, tripName, description, location, startDate, endDate }, context) => {
@@ -69,6 +72,7 @@ const resolvers = {
                 { $addToSet: { trips: trip._id}}
             );
             return trip;
+            
         },
         //update trip
         updateTrip: async (parent, { tripId, tripName, description, location, startDate, endDate }) => {
