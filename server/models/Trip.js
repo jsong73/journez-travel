@@ -20,7 +20,7 @@ const tripSchema = new Schema(
             trim: true,
         },
         startDate: {
-            type: Date,
+            type: String,
             default: Date.now,
             get: (timestamp) => dateFormat(timestamp),
         },
@@ -35,7 +35,16 @@ const tripSchema = new Schema(
                 ref: "Itinerary",
             },
         ],
-    });
+    },
+    {
+        toJSON: {
+        // used for formatting and combining fields and de-composing a single value into multiple values before storing it in the collection.
+        virtuals: true,
+        },
+        id: false,
+        versionKey: false,
+    }
+    );
 
 const Trip = model("Trip", tripSchema);
 

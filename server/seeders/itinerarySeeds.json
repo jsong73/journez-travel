@@ -26,7 +26,7 @@
       "startDate": "7/3/2023",
       "endDate": "7/5/2023",
       "price": "650.50",
-      "notes": "",
+      "notes": "Room # 3023",
       "paid": "false"
     },
     {
@@ -41,12 +41,12 @@
     },
     {
         "category": "Transportation",
-        "categoryName": "Jessica's 26th birthday in Vegas",
-        "location": "Uber",
-        "startDate": "7/3/2023",
+        "categoryName": "Uber",
+        "location": "",
+        "startDate": "7/5/2023",
         "endDate": "7/5/2023",
         "price": "35.00",
-        "notes": "",
+        "notes": "Uber back to airport",
         "paid": "true"
       }    
   ]

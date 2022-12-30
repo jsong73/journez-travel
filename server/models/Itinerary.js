@@ -36,7 +36,16 @@ const itinerarySchema = new Schema(
             type: Boolean,
             default: true,
         },
-    });
+     },
+        {
+            toJSON: {
+            // used for formatting and combining fields and de-composing a single value into multiple values before storing it in the collection.
+            virtuals: true,
+            },
+            id: false,
+            versionKey: false,
+        }
+    );
 
     const Itinerary = model("Itinerary", itinerarySchema);
 
