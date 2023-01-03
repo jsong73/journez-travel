@@ -37,8 +37,8 @@ const resolvers = {
         //add user
         addUser: async (parent, { username, email, password }) => {
             const user = await User.create({ username, email, password });
-            // const token = signToken(user);
-            // return { user, token };
+            const token = signToken(user);
+            return { user, token };
         },
         //log in 
         login: async (parent, { email, password }) => {
@@ -53,8 +53,8 @@ const resolvers = {
             if(!correctPw) {
                 throw new AuthenticationError("Incorrect credentials!");
             }
-            // const token = signToken(user);
-            // return { user, token };
+            const token = signToken(user);
+            return { user, token };
         },
         //add trip
         addTrip: async (parent, { userId, tripName, description, location, startDate, endDate }, context) => {
