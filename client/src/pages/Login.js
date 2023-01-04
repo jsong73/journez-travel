@@ -32,7 +32,7 @@ const Login = (props) => {
         } catch (error) {
             console.log(error);
         }
-        //clears for values
+        //clears form values
         setFormState({
             email: "",
             password: "",
