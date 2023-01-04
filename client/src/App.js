@@ -14,6 +14,7 @@ import Login from "../src/pages/Login";
 import Signup from "../src/pages/Signup";
 import UserTrips from "../src/pages/UserTrips";
 import Trip from "../src/pages/Trip";
+import Navbar from "./components/Navbar";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -38,6 +39,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
+        <Navbar />
         <Routes>
           <Route path="/home" element={<Home />} />
 
