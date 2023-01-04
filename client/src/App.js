@@ -1,4 +1,3 @@
-import './App.css';
 import React from "react";
 import {
   ApolloClient,
@@ -6,15 +5,15 @@ import {
   ApolloProvider,
   createHttpLink,
 } from "@apollo/client";
-
+import './App.css';
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Home from "../src/pages/Home"
-import Login from "../src/pages/Login"
-import Signup from "../src/pages/Signup"
-import UserTrips from "../src/pages/UserTrips"
-import Trip from "../src/pages/Trip"
+import Home from "../src/pages/Home";
+import Login from "../src/pages/Login";
+import Signup from "../src/pages/Signup";
+import UserTrips from "../src/pages/UserTrips";
+import Trip from "../src/pages/Trip";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
