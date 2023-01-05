@@ -11,6 +11,10 @@ console.log(trips)
                     <h1> {trips.tripName}</h1>
                     </Link>
                     <div>{trips.description}</div>
+                    <div>{trips.location}</div>
+                    <div>{trips.startDate}</div>
+                    <div>{trips.endDate}</div>
+
                     </div>
             ))}
        
