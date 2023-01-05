@@ -1,11 +1,27 @@
 import React from "react";
+import { useParams } from "react-router-dom";
+import { useQuery } from "@apollo/client";
+import { QUERY_ME, QUERY_USER } from "../utils/queries";
+import UserTripCards from "../components/UserTripCards";
+
 
 const UserTrips = () => {
+    const { username: userParam } = useParams();
+    const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
+        variables: { username: userParam },
+    });
 
+    const user = data?.me || data?.user || [];
+    const userTrips = user.trips;
+
+    if (loading) {
+        return <div> loading... </div>;
+    }
     return(
         <div>
             Your trips
-        </div>
+            <UserTripCards trips={userTrips}/>
+        </div>  
     )
 }
 
