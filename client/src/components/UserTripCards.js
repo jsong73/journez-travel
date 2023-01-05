@@ -1,19 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import DeleteTrip from "./DeleteTrip";
+import Auth from "../utils/auth";
 
 const UserTripCards = ({ trips }) => {
 console.log(trips)
     return(
         <div>
-            {trips.map((trips) => (
+            {trips.map((trip) => (
                 <div key={trips._id}>
-                    <Link to={`/trips/${trips._id}`}>
-                    <h1> {trips.tripName}</h1>
+                    <Link to={`/trips/${trip._id}`}>
+                    <h1> {trip.tripName}</h1>
                     </Link>
-                    <div>{trips.description}</div>
-                    <div>{trips.location}</div>
-                    <div>{trips.startDate}</div>
-                    <div>{trips.endDate}</div>
+                    
+                    <div> 
+                    <DeleteTrip 
+                    tripId ={trip._id} 
+                    isLoggedInUser= {Auth.loggedIn() === true}/> 
+                    </div>
+                   
+                    <div> Description: {trip.description}</div>
+                    <div> Location: {trip.location}</div>
+                    <div> Start date: {trip.startDate}</div>
+                    <div> End date: {trip.endDate}</div>
 
                     </div>
             ))}
