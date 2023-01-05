@@ -10,27 +10,51 @@ const Trip = () => {
         variables: { tripId: tripId },
     });
 
+    const trip = data?.trip || [];
     const itineraries = data?.trip.itineraries || [];
-    // console.log(itineraries)
+    console.log(itineraries)
     if (loading) {
         return <div> loading... </div>;
     }
 
+    const restaurant = itineraries.filter((itinerary) => itinerary.category.toLowerCase() === "restaurant");
+    
+    const hotel = itineraries.filter((itinerary) => itinerary.category.toLowerCase() === "hotel");
+    const transportation = itineraries.filter((itinerary) => itinerary.category.toLowerCase() === "transportation");
+    const flight = itineraries.filter((itinerary) => itinerary.category.toLowerCase() === "flight");
+    const activity = itineraries.filter((itinerary) => itinerary.category.toLowerCase() === "activity");
+
+
     return(
         <div>
-            Trip
-            <ItineraryCard
-            category= {itineraries.category}
-            categoryName= {itineraries.categoryName}
-            location= {itineraries.location}
-            startDate= {itineraries.startDate}
-            endDate= {itineraries.endDate}
-            price= {itineraries.price}
-            notes= {itineraries.notes}
-            paid= {true}
-            >
+          <h1> Your itinerary for {trip.tripName} </h1>  
 
-            </ItineraryCard>
+            <ItineraryCard
+            tripId={tripId}
+            itineraries={restaurant}
+            />
+
+            <ItineraryCard
+            tripId={tripId}
+            itineraries={hotel}
+            />
+
+            <ItineraryCard
+            tripId={tripId}
+            itineraries={transportation}
+            />
+            
+            <ItineraryCard
+            tripId={tripId}
+            itineraries={flight}
+            />
+
+            <ItineraryCard
+            tripId={tripId}
+            itineraries={activity}
+            />
+  
+
         </div>
     )
 }

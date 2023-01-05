@@ -28,6 +28,7 @@ const removeTripHandler = async ( tripId ) => {
         const { data } = await removeTrip({
             variables: { tripId },
         });
+        console.log(data)
         window.location.reload();
     } catch (error) {
         console.log(error)

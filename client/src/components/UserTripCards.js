@@ -4,11 +4,11 @@ import DeleteTrip from "./DeleteTrip";
 import Auth from "../utils/auth";
 
 const UserTripCards = ({ trips }) => {
-console.log(trips)
+// console.log(trips)
     return(
         <div>
             {trips.map((trip) => (
-                <div key={trips._id}>
+                <div key={trip._id}>
                     <Link to={`/trips/${trip._id}`}>
                     <h1> {trip.tripName}</h1>
                     </Link>
@@ -16,7 +16,7 @@ console.log(trips)
                     <div> 
                     <DeleteTrip 
                     tripId ={trip._id} 
-                    isLoggedInUser= {Auth.loggedIn() === true}/> 
+                    isLoggedInUser= {Auth.loggedIn() === true }/> 
                     </div>
                    
                     <div> Description: {trip.description}</div>
