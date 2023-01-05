@@ -2,25 +2,24 @@ import React from "react";
 
 const ItineraryCard = ({
     tripId,
-    itineraries
+    itineraries,
 }) => {
     // console.log(tripId)
     console.log(itineraries)
 
-    
+
     return(
         <div>
             {itineraries.map((itinerary) => (
                 <div key={itinerary._id}> 
                 <h1>{itinerary.category}</h1>
-                <div>{itinerary.categoryName}</div>
-                <div>{itinerary.location}</div>
-                <div>{itinerary.startDate}</div>
-                <div>{itinerary.endDate}</div>
-                <div>{itinerary.notes}</div>
-                <div>{itinerary.price}</div>
-                <div>{itinerary.paid}</div>
-                
+                <div> Name: {itinerary.categoryName}</div>
+                <div> Location: {itinerary.location}</div>
+                <div> Start Date: {itinerary.startDate}</div>
+                <div> End Date: {itinerary.endDate}</div>
+                <div> Notes: {itinerary.notes}</div>
+                <div> Price: {itinerary.price}</div>
+                {/* <div>{itinerary.paid}</div> */}
                 
                 </div>
             ))}

@@ -5,6 +5,9 @@ import Auth from "../utils/auth";
 
 const UserTripCards = ({ trips }) => {
 // console.log(trips)
+if(!trips.length){
+    return<div> No trips as of yet! </div>
+}
     return(
         <div>
             {trips.map((trip) => (

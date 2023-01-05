@@ -11,6 +11,7 @@ const Navbar = () => {
     <div>
         {Auth.loggedIn() ? (
         <>
+            <Link to="/home"> Home </Link>
             <Link to={`/users/${Auth.getProfile().data.username}`}> {Auth.getProfile().data.username}'s' Trips </Link>   
             <button onClick={logout}> Log out </button>
         </>

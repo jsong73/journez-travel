@@ -12,18 +12,18 @@ const Trip = () => {
 
     const trip = data?.trip || [];
     const itineraries = data?.trip.itineraries || [];
-    console.log(itineraries)
+   
+    // console.log(itineraries)
+
     if (loading) {
         return <div> loading... </div>;
     }
 
     const restaurant = itineraries.filter((itinerary) => itinerary.category.toLowerCase() === "restaurant");
-    
     const hotel = itineraries.filter((itinerary) => itinerary.category.toLowerCase() === "hotel");
     const transportation = itineraries.filter((itinerary) => itinerary.category.toLowerCase() === "transportation");
     const flight = itineraries.filter((itinerary) => itinerary.category.toLowerCase() === "flight");
     const activity = itineraries.filter((itinerary) => itinerary.category.toLowerCase() === "activity");
-
 
     return(
         <div>
@@ -32,6 +32,7 @@ const Trip = () => {
             <ItineraryCard
             tripId={tripId}
             itineraries={restaurant}
+    
             />
 
             <ItineraryCard
