@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import DeleteTrip from "./DeleteTrip";
+import UpdateTrip from "./UpdateTrip"
 import Auth from "../utils/auth";
 
 const UserTripCards = ({ trips }) => {
@@ -21,11 +22,22 @@ if(!trips.length){
                     tripId ={trip._id} 
                     isLoggedInUser= {Auth.loggedIn() === true }/> 
                     </div>
-                   
+
                     <div> Description: {trip.description}</div>
                     <div> Location: {trip.location}</div>
                     <div> Start date: {trip.startDate}</div>
                     <div> End date: {trip.endDate}</div>
+
+                    <UpdateTrip 
+                    tripId={trip._id}
+                    tripName={trip.tripName}
+                    description={trip.description}
+                    location={trip.location}
+                    startDate={trip.startDate}
+                    endDate={trip.endDate}
+                    />
+                   
+
 
                     </div>
             ))}

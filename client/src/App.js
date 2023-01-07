@@ -53,8 +53,6 @@ function App() {
           
           <Route path="/trips/:tripId" element={<Trip />} />
 
-          <Route path="/tripform" element={<TripForm />} />
-
         </Routes>
       </Router>
     </ApolloProvider>

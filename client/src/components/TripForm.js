@@ -4,7 +4,15 @@ import { ADD_TRIP } from "../utils/mutations";
 import Auth from "../utils/auth";
 import { QUERY_TRIP } from "../utils/queries"
 
-const TripForm = () => {
+const TripForm = ({
+    tripId,
+    tripName,
+    description,
+    location,
+    startDate,
+    endDate,
+}) => {
+
 
     const [formState, setFormState] = useState({
         tripName: "",
