@@ -28,6 +28,10 @@ export const ADD_TRIP = gql`
     mutation addTrip($userId: ID, $tripName: String, $description: String, $location: String, $startDate: String, $endDate: String) {
         addTrip(userId: $userId, tripName: $tripName, description: $description, location: $location, startDate: $startDate, endDate: $endDate){
             tripName
+            description
+            location
+            startDate
+            endDate
         }
     }
 `;
