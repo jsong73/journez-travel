@@ -11,7 +11,7 @@ const Home = () => {
           
             {Auth.loggedIn() ? (
             <>
-           <button onClick={TripForm}> Create a Trip </button>
+           <TripForm />
 
             </>
             ) : (

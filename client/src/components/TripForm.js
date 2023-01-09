@@ -2,17 +2,9 @@ import { useMutation } from "@apollo/client";
 import React, {useState} from "react";
 import { ADD_TRIP } from "../utils/mutations";
 import Auth from "../utils/auth";
-import { QUERY_TRIP } from "../utils/queries"
 
-const TripForm = ({
-    tripId,
-    tripName,
-    description,
-    location,
-    startDate,
-    endDate,
-}) => {
 
+const TripForm = () => {
 
     const [formState, setFormState] = useState({
         tripName: "",
@@ -21,29 +13,17 @@ const TripForm = ({
         startDate: "",
         endDate: "",
     });
-    console.log(formState)
 
-    const [addTrip] = useMutation(ADD_TRIP, {
-        update(cache, {data: { addTrip }}){
-            try{
-                const { tripName, description, location, startDate, endDate } = cache.readQuery({ query: QUERY_TRIP });
-                cache.writeQuery({
-                    query: QUERY_TRIP,
-                    data: {trip: [addTrip, tripName, description, location, startDate, endDate ]},
-                });
-            } catch (error){
-                console.log(error);
-            }
-        }
-    });
+    const [addTrip] = useMutation(ADD_TRIP);
+
    
-    const TripFormHandler = async (event) => {
+    const tripFormHandler = async (event) => {
       event.preventDefault();
         try{
             const { data } = await addTrip({
                 variables: {
                 ...formState,
-                _id: Auth.getProfile().data.username
+                _id: Auth.getProfile().data.username,
                 }
             });
             console.log(data)
@@ -53,14 +33,15 @@ const TripForm = ({
     };
 
     const handleChange = (event) => {
-        const { name, value } = event.target;
+    const { name, value } = event.target;
     setFormState((prevState) => {
-    return{
+        return{
         ...prevState,
-        [name]: value
+        [name]: value,
     }
   })
 };
+
     return(
         <div>
             <h1>Create a trip</h1>
@@ -71,6 +52,7 @@ const TripForm = ({
                     <input
                         name="tripName"
                         type="text"
+                        placeholder="Trip name"
                         value={formState.tripName}
                         onChange={handleChange}/>
             </li>
@@ -108,7 +90,7 @@ const TripForm = ({
                         onChange={handleChange}/>
             </li>
         </ul>
-        <button onClick={TripFormHandler}> Create trip </button>
+        <button onClick={tripFormHandler}> Create trip </button>
             </form>
         </div>
     )

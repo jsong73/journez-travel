@@ -5,18 +5,17 @@ const tripSchema = new Schema(
     {
         tripName: {
             type: String,
-            required: true,
+            required: "Please enter a trip name!",
             trim: true,
         },
         description: {
             type: String,
-            required: true,
             maxlength: 280,
             minlength: 1,
         },
         location: {
             type: String,
-            required: true,
+            required: "Please enter a location!",
             trim: true,
         },
         startDate: {

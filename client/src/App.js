@@ -15,7 +15,6 @@ import Signup from "../src/pages/Signup";
 import UserTrips from "../src/pages/UserTrips";
 import Trip from "../src/pages/Trip";
 import Navbar from "./components/Navbar";
-import TripForm from "./components/TripForm";
 
 const httpLink = createHttpLink({
   uri: "/graphql",

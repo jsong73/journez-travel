@@ -12,7 +12,7 @@ const UpdateTrip = ({
 
 return(
     <div>
-<h1> Edit Trip </h1>
+    <h1> Edit Trip </h1>
     <TripForm 
     tripId={tripId}
     tripName={tripName}
