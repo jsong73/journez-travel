@@ -3,19 +3,25 @@ import React, {useState} from "react";
 import { ADD_TRIP } from "../utils/mutations";
 import Auth from "../utils/auth";
 
+const userId = Auth.getProfile()?.data?._id;
 
-const TripForm = () => {
+const TripForm = ({ 
+    tripName, 
+    description, 
+    location, 
+    startDate, 
+    endDate }) => {
 
     const [formState, setFormState] = useState({
-        tripName: "",
-        description: "",
-        location: "",
-        startDate: "",
-        endDate: "",
+        tripName: tripName ? tripName : "",
+        description: description ? description : "",
+        location: location ? location : "",
+        startDate: startDate ? startDate : "",
+        endDate: endDate ? endDate : "",
+        userId: userId,
     });
 
     const [addTrip] = useMutation(ADD_TRIP);
-
    
     const tripFormHandler = async (event) => {
       event.preventDefault();
@@ -23,10 +29,10 @@ const TripForm = () => {
             const { data } = await addTrip({
                 variables: {
                 ...formState,
-                _id: Auth.getProfile().data.username,
                 }
             });
-            console.log(data)
+        window.location.reload();
+        console.log(data)
         } catch (error) {
             console.log(error)
         };
