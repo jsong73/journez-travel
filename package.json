@@ -2,8 +2,14 @@
   "name": "journez-travel",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "engines": {
+    "node": "16.x",
+    "npm": "8.x"
+  },
   "scripts": {
+    "install": "cd server && npm install && cd ../ && cd client && npm install",
+    "start": "node server/server.js",
+    "build": "cd client && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\""
   },

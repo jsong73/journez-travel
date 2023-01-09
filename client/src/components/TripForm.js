@@ -47,8 +47,6 @@ const TripForm = ({
     }
   })
 };
-console.log(formState.startDate)
-
     return(
         <div>
             <h1>Create a trip</h1>
