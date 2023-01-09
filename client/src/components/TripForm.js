@@ -47,6 +47,7 @@ const TripForm = ({
     }
   })
 };
+console.log(formState.startDate)
 
     return(
         <div>
@@ -54,46 +55,51 @@ const TripForm = ({
             <form>
         <ul>
             <li>
-                <label> Trip name: </label> 
+                <label> Trip name:
                     <input
                         name="tripName"
                         type="text"
                         placeholder="Trip name"
                         value={formState.tripName}
                         onChange={handleChange}/>
+                 </label> 
             </li>
             <li>
-                <label> Description: </label>
+                <label> Description: 
                     <textarea
                         name="description"
                         placeholder="Description"
                         value={formState.description}
                         onChange={handleChange}>
                     </textarea>     
+                </label>
             </li>
-                <label> Location: </label>
+                <label> Location: 
                     <input
                         name="location"
                         type="text"
                         placeholder="Where are you going?"
                         value={formState.location}
                         onChange={handleChange}/>
+                </label>
             <li>
                 
-                <label> Start date: </label>
+                <label> Start date: 
                     <input
                         type="date"
                         name="startDate"
                         value={formState.startDate}
                         onChange={handleChange}/>
+                </label>
             </li>
             <li>
-                <label> End date: </label>
+                <label> End date:
                     <input
                         type="date"
                         name="endDate"
                         value={formState.endDate}
                         onChange={handleChange}/>
+                 </label>
             </li>
         </ul>
         <button onClick={tripFormHandler}> Create trip </button>

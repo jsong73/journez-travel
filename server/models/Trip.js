@@ -19,7 +19,7 @@ const tripSchema = new Schema(
             trim: true,
         },
         startDate: {
-            type: String,
+            type: Date,
             default: Date.now,
             get: (timestamp) => dateFormat(timestamp),
         },
