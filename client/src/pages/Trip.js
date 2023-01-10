@@ -18,6 +18,9 @@ const Trip = () => {
     if (loading) {
         return <div> loading... </div>;
     }
+    if(!itineraries.length){
+        return <div> No itineraries to display as of yet! </div>
+    }
 
     const restaurant = itineraries.filter((itinerary) => itinerary.category.toLowerCase() === "restaurant");
     const hotel = itineraries.filter((itinerary) => itinerary.category.toLowerCase() === "hotel");
@@ -32,7 +35,6 @@ const Trip = () => {
             <ItineraryCard
             tripId={tripId}
             itineraries={restaurant}
-    
             />
 
             <ItineraryCard

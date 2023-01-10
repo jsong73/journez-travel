@@ -1,33 +1,40 @@
 import { useMutation } from "@apollo/client";
 import React, {useState} from "react";
-import { ADD_TRIP } from "../utils/mutations";
+import { ADD_ITINERARY } from "../utils/mutations";
 import Auth from "../utils/auth";
 
 const userId = Auth.getProfile()?.data?._id;
 
-const TripForm = ({ 
-    tripId,
-    tripName, 
-    description, 
+const ItineraryForm = ({ 
+    itineraryId,
+    category,
+    categoryName, 
     location, 
     startDate, 
-    endDate }) => {
+    endDate, 
+    price,
+    notes,
+    paid }) => {
+
 
     const [formState, setFormState] = useState({
-        tripName: tripName ? tripName : "",
-        description: description ? description : "",
+        category: category ? category : "",
+        categoryName: categoryName ? category : "",
         location: location ? location : "",
         startDate: startDate ? startDate : "",
         endDate: endDate ? endDate : "",
+        price: price ? price : "",
+        notes: notes ? notes : "",
+        paid: paid ? paid : "",
         userId: userId,
     });
 
-    const [addTrip] = useMutation(ADD_TRIP);
+    const [addItinerary] = useMutation(ADD_ITINERARY);
    
     const tripFormHandler = async (event) => {
       event.preventDefault();
         try{
-            const { data } = await addTrip({
+            const { data } = await addItinerary({
                 variables: {
                 ...formState,
                 }
@@ -50,7 +57,7 @@ const TripForm = ({
 };
     return(
         <div>
-            <h1>Create a trip</h1>
+            <h1>Create an itinerary</h1>
             <form>
         <ul>
             <li>
@@ -108,4 +115,4 @@ const TripForm = ({
 
 }
 
-export default TripForm;
+export default ItineraryForm;

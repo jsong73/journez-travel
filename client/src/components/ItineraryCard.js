@@ -1,13 +1,13 @@
 import React from "react";
+import UpdateItinerary from "../components/UpdateItinerary"
+import
 
 const ItineraryCard = ({
     tripId,
     itineraries,
+
 }) => {
     // console.log(tripId)
-    console.log(itineraries)
-
-
     return(
         <div>
             {itineraries.map((itinerary) => (
@@ -20,8 +20,24 @@ const ItineraryCard = ({
                 <div> Notes: {itinerary.notes}</div>
                 <div> Price: {itinerary.price}</div>
                 {/* <div>{itinerary.paid}</div> */}
-                
+                <DeleteItinerary 
+                tripId={tripId}
+                itineraryId={itinerary._id}/>
+
+                <UpdateItinerary
+                itineraryId={itinerary._id}
+                category={itinerary.category}
+                categoryName={itinerary.categoryName} 
+                location={itinerary.location}
+                startDate={itinerary.startDate}
+                endDate={itinerary.endDate}
+                notes={itinerary.notes}
+                price={itinerary.price}
+                paid={itinerary.paid}
+                />
+
                 </div>
+              
             ))}
                 
             
