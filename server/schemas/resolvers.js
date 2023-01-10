@@ -38,7 +38,7 @@ const resolvers = {
         addUser: async (parent, { username, email, password }) => {
             const user = await User.create({ username, email, password });
             const token = signToken(user);
-            return { user, token };
+            return { token, user };
         },
         //log in 
         login: async (parent, { email, password }) => {
@@ -54,11 +54,11 @@ const resolvers = {
                 throw new AuthenticationError("Incorrect credentials!");
             }
             const token = signToken(user);
-            return { user, token };
+            return { token, user};
         },
         //add trip
         addTrip: async (parent, { userId, tripName, description, location, startDate, endDate }, context) => {
-            // if (context.user) {
+            if (context.user) {
             const trip = await Trip.create({
                 tripName, 
                 description,
@@ -71,7 +71,8 @@ const resolvers = {
                 { $addToSet: { trips: trip._id}}
             );
             return trip;
-            
+            }
+            throw new AuthenticationError("You must be logged in!");
         },
         //update trip
         updateTrip: async (parent, { tripId, tripName, description, location, startDate, endDate }) => {
@@ -87,7 +88,7 @@ const resolvers = {
         },
         //add itinerary
         addItinerary: async (parent, { tripId, category, categoryName, location, startDate, endDate, price, notes, paid }, context) => {
-        // if (context.user) {
+        if (context.user) {
             const itinerary = await Itinerary.create({ category, categoryName, location, startDate, endDate, price, notes, paid });
 
             await Trip.findOneAndUpdate(
@@ -95,6 +96,8 @@ const resolvers = {
                 { $addToSet: { itineraries: itinerary._id }}
             );
             return itinerary;
+        }
+        throw new AuthenticationError("You must be logged in!");
         },
         //update itinerary
         updateItinerary: async (parent, { itineraryId, category, categoryName, location, startDate, endDate, price, notes, paid }) => {
