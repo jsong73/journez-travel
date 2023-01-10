@@ -1,6 +1,7 @@
 import decode from "jwt-decode";
 
 class AuthService {
+    // add try catch to fix jwt invalid token error
     getProfile() {
         try{
         return decode(this.getToken());
