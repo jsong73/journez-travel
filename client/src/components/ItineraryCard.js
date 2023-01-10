@@ -1,18 +1,20 @@
 import React from "react";
-import UpdateItinerary from "../components/UpdateItinerary"
-import
+import UpdateItinerary from "../components/UpdateItinerary";
+import DeleteItinerary from "../components/DeleteItinerary";
+import Auth from "../utils/auth";
 
 const ItineraryCard = ({
     tripId,
     itineraries,
-
+    category
 }) => {
+    console.log(category)
     // console.log(tripId)
     return(
         <div>
             {itineraries.map((itinerary) => (
                 <div key={itinerary._id}> 
-                <h1>{itinerary.category}</h1>
+                {/* <h1>{itinerary.category}</h1> */}
                 <div> Name: {itinerary.categoryName}</div>
                 <div> Location: {itinerary.location}</div>
                 <div> Start Date: {itinerary.startDate}</div>
@@ -22,7 +24,8 @@ const ItineraryCard = ({
                 {/* <div>{itinerary.paid}</div> */}
                 <DeleteItinerary 
                 tripId={tripId}
-                itineraryId={itinerary._id}/>
+                itineraryId={itinerary._id}
+                isLoggedInUser= {Auth.loggedIn() === true} />
 
                 <UpdateItinerary
                 itineraryId={itinerary._id}
@@ -33,8 +36,7 @@ const ItineraryCard = ({
                 endDate={itinerary.endDate}
                 notes={itinerary.notes}
                 price={itinerary.price}
-                paid={itinerary.paid}
-                />
+                paid={true} />
 
                 </div>
               

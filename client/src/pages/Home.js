@@ -8,9 +8,10 @@ const Home = () => {
 
     return(
         <div>
-          
+        
             {Auth.loggedIn() ? (
             <>
+              <h1>Create a trip</h1>
            <TripForm />
 
             </>

@@ -8,7 +8,7 @@ const Navbar = () => {
         Auth.logout();
 }
     return(
-    <div>
+    <div className="navbar navbar-dark bg-primary">
         {Auth.loggedIn() ? (
         <>
             <Link to="/home"> Home </Link>

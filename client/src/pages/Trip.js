@@ -31,28 +31,33 @@ const Trip = () => {
     return(
         <div>
           <h1> Your itinerary for {trip.tripName} </h1>  
-
+            <h2> Restaurant </h2>
             <ItineraryCard
+            category="restaurant"
             tripId={tripId}
             itineraries={restaurant}
             />
-
+            <h2> Hotel </h2>
             <ItineraryCard
+            category="hotel"
             tripId={tripId}
             itineraries={hotel}
             />
-
+            <h2> Transportation </h2>
             <ItineraryCard
+            category="transportation"
             tripId={tripId}
             itineraries={transportation}
             />
-            
+            <h2> Flight </h2>
             <ItineraryCard
+            category="flight"
             tripId={tripId}
             itineraries={flight}
             />
-
+            <h2> Activity </h2>
             <ItineraryCard
+            category="activity"
             tripId={tripId}
             itineraries={activity}
             />

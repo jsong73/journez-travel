@@ -50,7 +50,7 @@ const TripForm = ({
 };
     return(
         <div>
-            <h1>Create a trip</h1>
+       
             <form>
         <ul>
             <li>
@@ -101,7 +101,7 @@ const TripForm = ({
                  </label>
             </li>
         </ul>
-        <button onClick={tripFormHandler}> Create trip </button>
+        <button onClick={tripFormHandler}> Submit </button>
             </form>
         </div>
     )

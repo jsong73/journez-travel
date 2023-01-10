@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import { ADD_ITINERARY } from "../utils/mutations";
 import Auth from "../utils/auth";
 
+
 const userId = Auth.getProfile()?.data?._id;
 
 const ItineraryForm = ({ 
@@ -30,8 +31,9 @@ const ItineraryForm = ({
     });
 
     const [addItinerary] = useMutation(ADD_ITINERARY);
+
    
-    const tripFormHandler = async (event) => {
+    const itineraryFormHandler = async (event) => {
       event.preventDefault();
         try{
             const { data } = await addItinerary({
@@ -54,42 +56,34 @@ const ItineraryForm = ({
         [name]: value,
     }
   })
+
 };
+
     return(
         <div>
-            <h1>Create an itinerary</h1>
             <form>
         <ul>
             <li>
-                <label> Trip name:
+                <label> Itinerary name: 
                     <input
-                        name="tripName"
+                        name="categoryName"
                         type="text"
-                        placeholder="Trip name"
-                        value={formState.tripName}
+                        placeholder="fd"
+                        value={formState.categoryName}
                         onChange={handleChange}/>
                  </label> 
             </li>
             <li>
-                <label> Description: 
-                    <textarea
-                        name="description"
-                        placeholder="Description"
-                        value={formState.description}
-                        onChange={handleChange}>
-                    </textarea>     
-                </label>
-            </li>
                 <label> Location: 
                     <input
                         name="location"
                         type="text"
-                        placeholder="Where are you going?"
+                        placeholder="Address or location"
                         value={formState.location}
                         onChange={handleChange}/>
                 </label>
+            </li>
             <li>
-                
                 <label> Start date: 
                     <input
                         type="date"
@@ -107,12 +101,32 @@ const ItineraryForm = ({
                         onChange={handleChange}/>
                  </label>
             </li>
+            <li>
+                <label> Price: 
+                    <input
+                        name="price"
+                        type="text"
+                        placeholder="How much did this cost?"
+                        value={formState.price}
+                        onChange={handleChange}/>
+                </label>
+            </li>
+            <li>
+                <label> Notes: 
+                    <textarea
+                        name="notes"
+                        placeholder="Any additional information?"
+                        value={formState.notes}
+                        onChange={handleChange}>
+                    </textarea>     
+                </label>
+            </li>
         </ul>
-        <button onClick={tripFormHandler}> Create trip </button>
+        <button onClick={itineraryFormHandler}> Submit </button>
             </form>
         </div>
     )
 
-}
+    }
 
 export default ItineraryForm;
