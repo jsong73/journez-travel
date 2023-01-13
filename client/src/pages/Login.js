@@ -3,7 +3,7 @@ import { LOGIN_USER } from "../utils/mutations";
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 import { Link } from "react-router-dom";
-import LoginPicture from "../images/Login.jpg";
+import LoginPicture from "../images/loginpage.jpg";
 
 const Login = (props) => {
     const [formState, setFormState] = useState({
@@ -43,17 +43,18 @@ const Login = (props) => {
     return(
         <div className="h-screen">
             <div className="container px-6 py-12 h-full">
-            <div className="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
-            <div className="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
+                <div className="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
+                    <div className="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
             
-            <img 
-            className="w-full"
-            src={LoginPicture} 
-            alt="login-pic" />
-            </div>
+                    <img 
+                        className="w-full"
+                        src={LoginPicture} 
+                        alt="login-pic" />
+
+                     </div>
      
          <div className="md:w-8/12 lg:w-5/12 lg:ml-20">
-            <h1 className="mb-4 font-medium text-2xl leading-snug uppercase">Sign In</h1>
+            <h1 className="mb-4 font-bold text-2xl leading-snug">Welcome back.</h1>
                    {data ? (
                          <div>
                           You are now logged in. You will now be directed to the homepage.
@@ -87,16 +88,13 @@ const Login = (props) => {
 
                 <div className="text-sm font-semibold mt-3 pt-1 mb-0"> Don't have an account?
                 <Link className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out" to="/signup"> Register </Link></div>
-                 
-                 
             </form>
-           
             )}
-        </div>
+            </div>
         {error && (
           <div>{error.message}</div>
         )}
-        </div>
+            </div>
         </div>
     </div>
     );
