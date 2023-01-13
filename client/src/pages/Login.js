@@ -54,7 +54,7 @@ const Login = (props) => {
                      </div>
      
          <div className="md:w-8/12 lg:w-5/12 lg:ml-20">
-            <h1 className="mb-4 font-bold text-2xl leading-snug">Welcome back.</h1>
+            <h1 className="mb-4 text-3xl font-bold tracking-tight">Welcome back.</h1>
                    {data ? (
                          <div>
                           You are now logged in. You will now be directed to the homepage.
@@ -97,6 +97,8 @@ const Login = (props) => {
             </div>
         </div>
     </div>
+
+    
     );
 };
 

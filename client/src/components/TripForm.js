@@ -53,6 +53,7 @@ const TripForm = ({
 };
 
     return(
+        
     <div>
         <div className="flex justify-center items-center">
             <form className="bg-gray-50 shadow-xl rounded px-14 pt-10 pb-12">

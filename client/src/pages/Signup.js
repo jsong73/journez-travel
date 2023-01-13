@@ -3,6 +3,7 @@ import { ADD_USER } from "../utils/mutations";
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 import SignupPicture from "../images/signuppage.jpg";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
     const [formState, setFormState] = useState({
@@ -44,18 +45,25 @@ const Signup = () => {
     return(
         
         <div className="h-screen">
-             <div className="container px-6 py-12 h-full">
-                 <div className="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
+            <div className="bg-gray-50">
+                <div className="mx-auto max-w-7xl py-12 px-6 lg:flex lg:items-center lg:justify-between lg:py-16 lg:px-8">
+                    <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                        <span className="block">Going on a trip?</span>
+                        <span className="block text-blue-600">Sign up to get started.</span>
+                    </h1>
+                </div>
+            </div>
+             <div className="container px-6">
+                 <div className="flex justify-center items-center flex-wrap">
                     <div className="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
 
                     <img 
                         className="w-full"
                         src={SignupPicture} 
                         alt="signup-pic" />
-
                     </div>
             <div className="md:w-8/12 lg:w-5/12 lg:ml-20">
-                <h1 className="mb-4 font-bold text-2xl leading-snug ">Sign up. </h1>
+                <h1 className="mb-4 text-3xl font-bold tracking-tight">Sign up. </h1>
 
                     {data ? (
                         <div>
@@ -95,8 +103,14 @@ const Signup = () => {
                         onChange={handleChange}/>
                 </div>
                 <button 
-                className="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full" 
-                type="submit"> Create account </button>     
+                    className="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full" 
+                    type="submit"> Create account </button>     
+
+
+                <div className="text-sm font-semibold mt-3 pt-1 mb-0"> Already have an account?
+                <Link className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out" to="/"> Log in </Link></div>
+
+
             </form>
             )}
             </div>
@@ -105,7 +119,10 @@ const Signup = () => {
         )}
             </div>
         </div>
+        
     </div>
+
+    
     )
 }
 

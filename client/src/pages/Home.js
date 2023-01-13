@@ -13,7 +13,7 @@ const Home = () => {
             <>
               <h1 className="mb-5 mt-10 text-gray-700 text-center font-bold text-2xl leading-snug"> Create a trip </h1>
            <TripForm />
- 
+
             </>
             ) : (
             <>
