@@ -11,7 +11,7 @@ const Trip = () => {
     });
 
     const trip = data?.trip || [];
-    const itineraries = data?.trip.itineraries;
+    const itineraries = trip.itineraries || [];
    
     // console.log(itineraries)
 
