@@ -77,12 +77,12 @@ const TripForm = ({
                     </textarea>     
                 </div>
                 <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2"> Destination </label>
+                <label className="block text-gray-700 text-sm font-bold mb-2"> Where are you going? </label>
                     <input
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         name="location"
                         type="text"
-                        placeholder="Where are you going?"
+                        placeholder="Destination"
                         value={formState.location}
                         onChange={handleChange}/>
                 </div>

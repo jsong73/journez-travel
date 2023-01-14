@@ -24,18 +24,12 @@ const UpdateTrip = ({
     endDate,
 }) => {
 
-    let subtitle;
-
     const [modalIsOpen, setIsOpen] = useState(false);
   
     function openModal() {
       setIsOpen(true);
     }
-  
-    function afterOpenModal() {
-      subtitle.style.color = "#f00";
-    }
-  
+
     function closeModal() {
       setIsOpen(false);
     }
@@ -49,8 +43,8 @@ return(
             type="submit"> Edit trip </button>
 
     <Modal
+        id="modal"
         isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Edit trip">

@@ -26,16 +26,10 @@ const UpdateItinerary = ({
     price,
     paid }) => {
 
-    let subtitle;
-
     const [modalIsOpen, setIsOpen] = useState(false);
       
     function openModal() {
           setIsOpen(true);
-    }
-      
-    function afterOpenModal() {
-        subtitle.style.color = "#f00";
     }
       
     function closeModal() {
@@ -52,7 +46,6 @@ return(
 
         <Modal
             isOpen={modalIsOpen}
-            onAfterOpen={afterOpenModal}
             onRequestClose={closeModal}
             style={customStyles}
             contentLabel="Edit itinerary">

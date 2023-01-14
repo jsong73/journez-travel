@@ -17,7 +17,7 @@ if(!trips.length){
             {trips.map((trip) => (
                 <div key={trip._id}>
                     <Link to={`/trips/${trip._id}`}>
-                    <h1 className="italic text-3xl font-bold tracking-tight"> {trip.tripName}</h1>
+                    <h1 className="italic underline text-3xl font-bold tracking-tight"> {trip.tripName}</h1>
                     </Link>
                     
                     <div> 
