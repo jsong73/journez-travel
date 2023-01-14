@@ -18,10 +18,13 @@ const UserTrips = () => {
         return <div> loading... </div>;
     }
     return(
-        <div>
-            Your trips
-            <UserTripCards trips={userTrips}/>
-        </div>  
+
+            <div>
+                <h1 className="text-3xl font-bold tracking-tight"> Your trips </h1>
+                    <UserTripCards trips={userTrips}/>
+            </div>  
+
+        
     )
 }
 

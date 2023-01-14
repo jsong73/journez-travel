@@ -13,7 +13,6 @@ const TripForm = ({
     startDate, 
     endDate }) => {
 
-
     const [formState, setFormState] = useState({
         tripName: tripName ? tripName : "",
         description: description ? description : "",
@@ -49,14 +48,13 @@ const TripForm = ({
     }
   })
 
-
 };
 
     return(
         
     <div>
         <div className="flex justify-center items-center">
-            <form className="bg-gray-50 shadow-xl rounded px-14 pt-10 pb-12">
+            <form className="">
                 <div className="mb-6">
                     <div>
                         <label className="block text-gray-700 text-sm font-bold mb-2"> What is the name of your trip? </label> 
