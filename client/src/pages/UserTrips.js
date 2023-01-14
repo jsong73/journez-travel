@@ -20,7 +20,7 @@ const UserTrips = () => {
     return(
 
             <div>
-                <h1 className="text-3xl font-bold tracking-tight"> Your trips </h1>
+                <h1 className="text-3xl text-gray-700 font-bold tracking-tight"> Your trips </h1>
                     <UserTripCards trips={userTrips}/>
             </div>  
 

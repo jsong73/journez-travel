@@ -11,7 +11,7 @@ const Trip = () => {
     });
 
     const trip = data?.trip || [];
-    const itineraries = data?.trip.itineraries || [];
+    const itineraries = data?.trip.itineraries;
    
     // console.log(itineraries)
 
@@ -19,7 +19,7 @@ const Trip = () => {
         return <div> loading... </div>;
     }
     if(!itineraries.length){
-        return <div> No itineraries to display as of yet! </div>
+        return <div className="mt-4 text-md tracking-tight font-medium text-red-700" role="alert"> No itineraries to display as of yet! </div>
     }
 
     const restaurant = itineraries.filter((itinerary) => itinerary.category.toLowerCase() === "restaurant");

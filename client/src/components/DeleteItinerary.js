@@ -2,6 +2,7 @@ import React from "react";
 import { useMutation } from "@apollo/client";
 import { REMOVE_ITINERARY } from "../utils/mutations";
 import { QUERY_ME } from "../utils/queries";
+import Delete from "../images/delete.png"
 
 const DeleteItinerary = ({ 
     itineraryId,
@@ -37,7 +38,10 @@ const removeItineraryHandler = async ( itineraryId, tripId ) => {
             {isLoggedInUser && (
                 <button
                 onClick={() => removeItineraryHandler( itineraryId, tripId)}>
-                X
+                <img 
+                src={Delete} 
+                alt="delete-btn" 
+                width="20px"/>
                 </button>
 
 

@@ -9,7 +9,7 @@ const UserTripCards = ({ trips }) => {
 // console.log(trips)
 
 if(!trips.length){
-    return<div> No trips as of yet! </div>
+    return <div className="mt-4 text-md tracking-tight font-medium text-red-700" role="alert"> No trips booked as of yet! </div>
 }
 
     return(
@@ -17,14 +17,16 @@ if(!trips.length){
             {trips.map((trip) => (
                 <div key={trip._id}>
                     <Link to={`/trips/${trip._id}`}>
-                    <h1 className="italic underline text-3xl font-bold tracking-tight"> {trip.tripName}</h1>
-                    </Link>
-                    
+
                     <div> 
                     <DeleteTrip 
                     tripId ={trip._id} 
                     isLoggedInUser= {Auth.loggedIn() === true }/> 
                     </div>
+
+                    <h1 className="italic underline text-gray-700 text-3xl font-bold tracking-tight"> {trip.tripName}</h1>
+                    </Link>
+
 
                     <div className="text-gray-700 text-sm font-bold"> Description: {trip.description}</div>
                     <div className="text-gray-700 text-sm font-bold"> Location: {trip.location}</div>

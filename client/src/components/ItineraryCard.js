@@ -8,12 +8,18 @@ const ItineraryCard = ({
     itineraries,
     category
 }) => {
-    console.log(category)
+    // console.log(category)
     // console.log(tripId)
     return(
         <div>
             {itineraries.map((itinerary) => (
                 <div key={itinerary._id}> 
+                
+                <DeleteItinerary 
+                tripId={tripId}
+                itineraryId={itinerary._id}
+                isLoggedInUser= {Auth.loggedIn() === true} />
+
                 {/* <h1>{itinerary.category}</h1> */}
                 <div> Name: {itinerary.categoryName}</div>
                 <div> Location: {itinerary.location}</div>
@@ -22,10 +28,7 @@ const ItineraryCard = ({
                 <div> Notes: {itinerary.notes}</div>
                 <div> Price: {itinerary.price}</div>
                 {/* <div>{itinerary.paid}</div> */}
-                <DeleteItinerary 
-                tripId={tripId}
-                itineraryId={itinerary._id}
-                isLoggedInUser= {Auth.loggedIn() === true} />
+
 
                 <UpdateItinerary
                 itineraryId={itinerary._id}
