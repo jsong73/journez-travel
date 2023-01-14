@@ -54,7 +54,7 @@ const TripForm = ({
         
     <div>
         <div className="flex justify-center items-center">
-            <form className="">
+            <form>
                 <div className="mb-6">
                     <div>
                         <label className="block text-gray-700 text-sm font-bold mb-2"> What is the name of your trip? </label> 
@@ -86,7 +86,6 @@ const TripForm = ({
                         value={formState.location}
                         onChange={handleChange}/>
                 </div>
-                
                     <label className="block text-gray-700 text-sm font-bold mb-2"> Start date </label>
                         <input
                             className="shadow appearance-none border rounded w-full py-2 px-3 mb-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"

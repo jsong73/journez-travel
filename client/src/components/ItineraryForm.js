@@ -60,69 +60,67 @@ const ItineraryForm = ({
 };
 
     return(
-        <div>
+        <div className="flex justify-center items-center">
             <form>
-        <ul>
-            <li>
-                <label> Itinerary name: 
+                <div className="mb-6">
+                    <label className="block text-gray-700 text-sm font-bold mb-2"> Itinerary name </label> 
+                        <input
+                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            name="categoryName"
+                            type="text"
+                            placeholder="fd"
+                            value={formState.categoryName}
+                            onChange={handleChange}/>
+                 </div>        
+                <label className="block text-gray-700 text-sm font-bold mb-2"> Location </label>
                     <input
-                        name="categoryName"
-                        type="text"
-                        placeholder="fd"
-                        value={formState.categoryName}
-                        onChange={handleChange}/>
-                 </label> 
-            </li>
-            <li>
-                <label> Location: 
-                    <input
+                        className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         name="location"
                         type="text"
                         placeholder="Address or location"
                         value={formState.location}
                         onChange={handleChange}/>
-                </label>
-            </li>
-            <li>
-                <label> Start date: 
+             
+                <div className="mb-2 mt-4">
+                <label className="block text-gray-700 text-sm font-bold mb-2"> Start date </label>
                     <input
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         type="date"
                         name="startDate"
                         value={formState.startDate}
                         onChange={handleChange}/>
-                </label>
-            </li>
-            <li>
-                <label> End date:
+                </div>
+                <div className="mb-2 mt-4">
+                <label className="block text-gray-700 text-sm font-bold mb-2"> End date </label>
                     <input
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         type="date"
                         name="endDate"
                         value={formState.endDate}
                         onChange={handleChange}/>
-                 </label>
-            </li>
-            <li>
-                <label> Price: 
+                </div>
+                <div className="mb-2 mt-4">
+                <label className="block text-gray-700 text-sm font-bold mb-2"> Price </label>
                     <input
+                        className="shadow appearance-none border rounded w-full py-2 px-3 mb-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         name="price"
                         type="text"
                         placeholder="How much did this cost?"
                         value={formState.price}
                         onChange={handleChange}/>
-                </label>
-            </li>
-            <li>
-                <label> Notes: 
+                </div>
+                <label className="block text-gray-700 text-sm font-bold mb-2"> Notes </label>
                     <textarea
+                        className="shadow appearance-none border rounded w-full py-2 px-3 mb-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         name="notes"
                         placeholder="Any additional information?"
                         value={formState.notes}
                         onChange={handleChange}>
                     </textarea>     
-                </label>
-            </li>
-        </ul>
-        <button onClick={itineraryFormHandler}> Submit </button>
+         
+        <button 
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            onClick={itineraryFormHandler}> Submit </button>
             </form>
         </div>
     )

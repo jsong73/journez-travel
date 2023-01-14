@@ -39,6 +39,7 @@ const UpdateTrip = ({
     function closeModal() {
       setIsOpen(false);
     }
+
   
 return(
     <div>
@@ -55,11 +56,11 @@ return(
         contentLabel="Edit trip">
 
     <button 
-        className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+        className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-right" 
         type="submit"
         onClick={closeModal}> Close </button>
 
-    <h1 className="mt-4 text-3xl font-bold tracking-tight"> Edit Trip </h1>
+    <h1 className="mt-10 mb-3 px-10 py-6 text-3xl font-bold tracking-tight"> Edit Trip </h1>
 
 
     <TripForm 
@@ -70,8 +71,8 @@ return(
         startDate={startDate}
         endDate={endDate}/>
 
-
   </Modal>
+
     </div>
   
 )

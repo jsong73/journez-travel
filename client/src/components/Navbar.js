@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState }from "react";
 import { Link } from "react-router-dom";
 import Auth from "../utils/auth";
 
@@ -7,6 +7,7 @@ const Navbar = () => {
     const logout = (event) => {
         event.preventDefault();
         Auth.logout();
+
 }
     return(
   
@@ -35,7 +36,9 @@ const Navbar = () => {
                             <button className="mr-2 text-lg font-bold tracking-tight text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"> <Link to="/"> Log in </Link> </button>
                         </li>      
                        <li>
-                          <button className="mr-2 text-lg font-bold tracking-tight text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"> <Link to="/signup"> Sign up </Link> </button>
+                          <button 
+                                className="mr-2 text-lg font-bold tracking-tight text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"> <Link to="/signup"> Sign up </Link> </button>
+
                         </li>
                     </ul>
                 </>

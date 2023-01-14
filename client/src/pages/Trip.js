@@ -30,7 +30,7 @@ const Trip = () => {
 
     return(
         <div>
-          <h1> Your itinerary for {trip.tripName} </h1>  
+          <h1 className="text-3xl font-bold tracking-tight"> Your itinerary for {trip.tripName} </h1>  
             <h2> Restaurant </h2>
             <ItineraryCard
             category="restaurant"
