@@ -54,7 +54,13 @@ return(
         style={customStyles}
         contentLabel="Edit trip">
 
+    <button 
+        className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+        type="submit"
+        onClick={closeModal}> Close </button>
+
     <h1 className="mt-4 text-3xl font-bold tracking-tight"> Edit Trip </h1>
+
 
     <TripForm 
         tripId={tripId}
@@ -63,6 +69,8 @@ return(
         location={location}
         startDate={startDate}
         endDate={endDate}/>
+
+
   </Modal>
     </div>
   
