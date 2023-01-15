@@ -6,7 +6,7 @@ import Auth from "../utils/auth";
 
 
 const UserTripCards = ({ trips }) => {
-// console.log(trips)
+console.log(trips)
 
 if(!trips.length){
     return <div className="mt-4 text-md tracking-tight font-medium text-red-700" role="alert"> No trips booked as of yet! </div>

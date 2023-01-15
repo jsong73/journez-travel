@@ -1,7 +1,7 @@
-import { useMutation } from "@apollo/client";
 import React, {useState} from "react";
-import { ADD_TRIP } from "../utils/mutations";
 import Auth from "../utils/auth";
+import UpdateTripButton from "../components/UpdateTripButton";
+import CreateTripButton from "../components/CreateTripButton";
 
 const userId = Auth.getProfile()?.data?._id;
 
@@ -22,22 +22,6 @@ const TripForm = ({
         userId: userId,
     });
 
-    const [addTrip] = useMutation(ADD_TRIP);
-   
-    const tripFormHandler = async (event) => {
-      event.preventDefault();
-        try{
-            const { data } = await addTrip({
-                variables: {
-                ...formState,
-                }
-            });
-        window.location.reload();
-        console.log(data)
-        } catch (error) {
-            console.log(error)
-        };
-    };
 
     const handleChange = (event) => {
     const { name, value } = event.target;
@@ -46,9 +30,14 @@ const TripForm = ({
         ...prevState,
         [name]: value,
     }
-  })
-
+  });
 };
+
+    let button;
+    if(tripId) {
+        button = <UpdateTripButton formState={formState} tripId={tripId} />
+    } else {
+        button = <CreateTripButton formState={formState} />
 
     return(
         
@@ -106,10 +95,11 @@ const TripForm = ({
             
         </div>
         <div className="flex items-center justify-between">
-            <button 
+            {/* <button 
                 className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 type="submit"
-                onClick={tripFormHandler}> Submit </button>
+                onClick={tripFormHandler}> Submit </button> */}
+                <div>{button}</div>
         </div>
             </form>
            
@@ -117,7 +107,7 @@ const TripForm = ({
         </div>
     
     )
-
+}
 }
 
 export default TripForm;

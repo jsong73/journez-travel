@@ -4,7 +4,6 @@ import { useQuery } from "@apollo/client";
 import { QUERY_ME, QUERY_USER } from "../utils/queries";
 import UserTripCards from "../components/UserTripCards";
 
-
 const UserTrips = () => {
     const { username: userParam } = useParams();
     const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
@@ -13,6 +12,8 @@ const UserTrips = () => {
 
     const user = data?.me || data?.user || [];
     const userTrips = user.trips;
+    // console.log(user)
+    // console.log(userTrips)
 
     if (loading) {
         return <div> loading... </div>;
