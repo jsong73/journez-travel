@@ -37,9 +37,9 @@ let button;
 if(!tripId){
     button = <CreateTripButton formState={formState} />
 } else {
-     button = <UpdateTripButton formState={formState} tripId={tripId} />
+    button = <UpdateTripButton formState={formState} tripId={tripId} />
 }
-
+console.log(tripId)
     return(
     
     <div>
@@ -96,7 +96,7 @@ if(!tripId){
             
         </div>
         <div className="flex items-center justify-between">
-        <div>{button}</div>
+        <div className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">{button}</div>
         </div>
             </form>
            

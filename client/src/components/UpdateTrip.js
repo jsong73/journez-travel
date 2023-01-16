@@ -65,8 +65,6 @@ return(
         startDate={startDate}
         endDate={endDate} />
 
-
-
   </Modal>
 
   
