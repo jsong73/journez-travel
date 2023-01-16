@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import TripForm from "./TripForm";
+import TripForm from "../components/TripForm";
 import Modal from "react-modal";
 
 const customStyles = {
@@ -56,16 +56,20 @@ return(
 
     <h1 className="mt-10 mb-3 px-10 py-6 text-3xl font-bold tracking-tight"> Edit Trip </h1>
 
-
+        
     <TripForm 
         tripId={tripId}
         tripName={tripName}
         description={description}
         location={location}
         startDate={startDate}
-        endDate={endDate}/>
+        endDate={endDate} />
+
+
 
   </Modal>
+
+  
 
     </div>
   

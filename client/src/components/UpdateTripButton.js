@@ -7,7 +7,7 @@ const UpdateTripButton =({ formState, tripId }) =>{
 
     const updateTripHandler = async (event) => {
         try{
-            const {data} = updateTrip({
+            const { data } = updateTrip({
                 variables: {
                     tripId: tripId,
                     tripName: formState.tripName,

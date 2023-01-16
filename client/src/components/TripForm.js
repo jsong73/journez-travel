@@ -33,14 +33,15 @@ const TripForm = ({
   });
 };
 
-    let button;
-    if(tripId) {
-        button = <UpdateTripButton formState={formState} tripId={tripId} />
-    } else {
-        button = <CreateTripButton formState={formState} />
+let button;
+if(!tripId){
+    button = <CreateTripButton formState={formState} />
+} else {
+     button = <UpdateTripButton formState={formState} tripId={tripId} />
+}
 
     return(
-        
+    
     <div>
         <div className="flex justify-center items-center">
             <form>
@@ -95,11 +96,7 @@ const TripForm = ({
             
         </div>
         <div className="flex items-center justify-between">
-            {/* <button 
-                className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                type="submit"
-                onClick={tripFormHandler}> Submit </button> */}
-                <div>{button}</div>
+        <div>{button}</div>
         </div>
             </form>
            
@@ -107,7 +104,7 @@ const TripForm = ({
         </div>
     
     )
-}
+
 }
 
 export default TripForm;
