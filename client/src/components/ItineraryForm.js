@@ -1,8 +1,7 @@
-import { useMutation } from "@apollo/client";
 import React, {useState} from "react";
-import { ADD_ITINERARY } from "../utils/mutations";
 import Auth from "../utils/auth";
-
+import CreateItineraryButton from "../components/CreateItineraryButton";
+import UpdateItineraryButton from "../components/UpdateItineraryButton";
 
 const userId = Auth.getProfile()?.data?._id;
 
@@ -30,24 +29,6 @@ const ItineraryForm = ({
         userId: userId,
     });
 
-    const [addItinerary] = useMutation(ADD_ITINERARY);
-
-   
-    const itineraryFormHandler = async (event) => {
-      event.preventDefault();
-        try{
-            const { data } = await addItinerary({
-                variables: {
-                ...formState,
-                }
-            });
-        window.location.reload();
-        console.log(data)
-        } catch (error) {
-            console.log(error)
-        };
-    };
-
     const handleChange = (event) => {
     const { name, value } = event.target;
     setFormState((prevState) => {
@@ -58,6 +39,13 @@ const ItineraryForm = ({
   })
 
 };
+
+let button;
+if(!itineraryId){
+    button = <CreateItineraryButton formState={formState} />
+} else {
+    button = <UpdateItineraryButton formState={formState} itineraryId={itineraryId} />
+}
 
     return(
         <div className="flex justify-center items-center">
@@ -118,10 +106,8 @@ const ItineraryForm = ({
                         onChange={handleChange}>
                     </textarea>     
          
-        <button 
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            onClick={itineraryFormHandler}> Submit </button>
-            </form>
+        <div className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"> {button} </div>
+        </form>
         </div>
     )
 
