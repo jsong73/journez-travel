@@ -1,26 +1,17 @@
 import React from "react";
 import { useMutation } from "@apollo/client";
 import { REMOVE_ITINERARY } from "../utils/mutations";
-import { QUERY_ME } from "../utils/queries";
+
 import Delete from "../images/delete.png"
 
 const DeleteItinerary = ({ 
     itineraryId,
     tripId,
     isLoggedInUser= false }) => {
-
-    const [ removeItinerary ] = useMutation(REMOVE_ITINERARY, {
-    update(cache, {data: { removeItinerary }}) {
-        try{
-            cache.readQuery({
-                query: QUERY_ME,
-                data: { me: removeItinerary },
-            });
-        } catch (error){
-            console.log(error)
-        }
-    },
-});
+// console.log(itineraryId)
+// console.log(tripId)
+// console.log(isLoggedInUser)
+const [removeItinerary] = useMutation(REMOVE_ITINERARY);
 
 const removeItineraryHandler = async ( itineraryId, tripId ) => {
     try{
@@ -33,6 +24,8 @@ const removeItineraryHandler = async ( itineraryId, tripId ) => {
         console.log(error)
     }
 };
+
+
     return (
         <div>
             {isLoggedInUser && (

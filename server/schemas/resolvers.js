@@ -112,7 +112,7 @@ const resolvers = {
             return await Trip.findOneAndUpdate(
                 {_id: tripId},
                 // $eq matches documents where the value of a field equals the specified value
-                {$pull: {itineraries: { $eq: itineraryId }}},
+                {$pull: {itineraries: { $in: itineraryId }}},
                 {new: true}
             );
         },

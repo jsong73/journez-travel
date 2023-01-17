@@ -34,7 +34,8 @@ const UpdateTripButton = ({ formState, tripId }) =>{
 
     
     return(
-        <button onClick={updateTripHandler}> Update  </button>
+        <button onClick={updateTripHandler}> Update trip  </button>
+
     )
 }
 

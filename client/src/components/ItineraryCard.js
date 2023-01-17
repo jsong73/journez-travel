@@ -8,8 +8,11 @@ const ItineraryCard = ({
     itineraries,
     category
 }) => {
-    // console.log(category)
+    // console.log(itineraries)
     // console.log(tripId)
+    if(!itineraries.length){
+        return `No ${category} booked as of yet!`
+    }
     return(
         <div>
             {itineraries.map((itinerary) => (
