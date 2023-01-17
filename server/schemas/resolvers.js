@@ -75,10 +75,10 @@ const resolvers = {
             // throw new AuthenticationError("You must be logged in!");
         },
         //update trip
-        updateTrip: async (parent, { tripId, tripName, description, location, startDate, endDate }) => {
+        updateTrip: async (parent, { tripId, tripName, description, location, startDate, endDate }, context) => {
             return await Trip.findOneAndUpdate(
                 { _id: tripId },
-                {$set: { tripName, description, location, startDate, endDate }, },
+                { $set: { tripName, description, location, startDate, endDate }, },
                 { new: true }
             );
         },

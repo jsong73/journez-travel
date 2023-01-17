@@ -15,7 +15,6 @@ const CreateTripButton = ({ formState }) => {
             });
             console.log(data)
         window.location.reload();
-        console.log(data)
         } catch (error) {
             console.log(error)
         };

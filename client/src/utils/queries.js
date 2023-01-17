@@ -19,7 +19,7 @@ export const QUERY_USER = gql`
 
 export const QUERY_TRIP = gql`
     query trip($tripId: ID!) {
-        trip(tripId: $tripId){
+        trip(tripId: $tripId) {
             tripName
             description
             location

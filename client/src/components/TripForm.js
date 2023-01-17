@@ -33,13 +33,14 @@ const TripForm = ({
   });
 };
 
+
 let button;
 if(!tripId){
     button = <CreateTripButton formState={formState} />
 } else {
     button = <UpdateTripButton formState={formState} tripId={tripId} />
 }
-console.log(tripId)
+// console.log(tripId)
     return(
     
     <div>

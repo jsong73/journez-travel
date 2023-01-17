@@ -26,14 +26,14 @@ export const ADD_USER = gql`
 
 export const ADD_TRIP = gql`
     mutation addTrip($userId: ID, $tripName: String, $description: String, $location: String, $startDate: String, $endDate: String) {
-        addTrip(userId: $userId, tripName: $tripName, description: $description, location: $location, startDate: $startDate, endDate: $endDate){
+        addTrip(userId: $userId, tripName: $tripName, description: $description, location: $location, startDate: $startDate, endDate: $endDate) {
             tripName
         }
     }
 `;
 
 export const UPDATE_TRIP = gql`
-    mutation updateTrip($tripId: ID, $tripName: String, $description: String, $location: String, $startDate: String, $endDate: String){
+    mutation updateTrip($tripId: ID, $tripName: String, $description: String, $location: String, $startDate: String, $endDate: String) {
         updateTrip(tripId: $tripId, tripName: $tripName, decription: $description, location: $location, startDate: $startDate, endDate: $endDate) {
             tripName
         }
