@@ -26,7 +26,7 @@ const UpdateTripButton = ({ formState, tripId }) =>{
                 }
             });
             console.log(data)
-            // window.location.reload();
+            window.location.reload();
         } catch (error) {
             console.log(error)
         };
@@ -34,7 +34,7 @@ const UpdateTripButton = ({ formState, tripId }) =>{
 
     
     return(
-        <button onClick={updateTripHandler}> Update Trip </button>
+        <button onClick={updateTripHandler}> Update  </button>
     )
 }
 

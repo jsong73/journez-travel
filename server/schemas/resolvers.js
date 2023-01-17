@@ -75,7 +75,7 @@ const resolvers = {
             // throw new AuthenticationError("You must be logged in!");
         },
         //update trip
-        updateTrip: async (parent, { tripId, tripName, description, location, startDate, endDate }, context) => {
+        updateTrip: async (parent, { tripId, tripName, description, location, startDate, endDate }) => {
             return await Trip.findOneAndUpdate(
                 { _id: tripId },
                 { $set: { tripName, description, location, startDate, endDate }, },
