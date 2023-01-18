@@ -11,8 +11,9 @@ const ItineraryCard = ({
     // console.log(itineraries)
     // console.log(tripId)
     if(!itineraries.length){
-        return `No ${category} booked as of yet!`
+        return `No ${category} booked as of yet!` 
     }
+console.log(itineraries.categoryName)
     return(
         <div>
             {itineraries.map((itinerary) => (
@@ -43,6 +44,7 @@ const ItineraryCard = ({
                 notes={itinerary.notes}
                 price={itinerary.price}
                 paid={true} />
+
 
                 </div>
               

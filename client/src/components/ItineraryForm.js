@@ -41,7 +41,7 @@ const ItineraryForm = ({
 };
 
 let button;
-if(!itineraryId){
+if(itineraryId){
     button = <CreateItineraryButton formState={formState} />
 } else {
     button = <UpdateItineraryButton formState={formState} itineraryId={itineraryId} />
@@ -51,12 +51,12 @@ if(!itineraryId){
         <div className="flex justify-center items-center">
             <form>
                 <div className="mb-6">
-                    <label className="block text-gray-700 text-sm font-bold mb-2"> Itinerary name </label> 
+                    <label className="block text-gray-700 text-sm font-bold mb-2"> Name of {category} </label> 
                         <input
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             name="categoryName"
                             type="text"
-                            placeholder="fd"
+                            placeholder="Name"
                             value={formState.categoryName}
                             onChange={handleChange}/>
                  </div>        
@@ -106,7 +106,7 @@ if(!itineraryId){
                         onChange={handleChange}>
                     </textarea>     
          
-        <div className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"> {button} </div>
+        <div> {button} </div>
         </form>
         </div>
     )
