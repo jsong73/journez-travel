@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_TRIP } from "../utils/queries";
 import ItineraryCard from "../components/ItineraryCard";
+import AddPlan from "../components/AddPlan";
 
 const Trip = () => {
     const { tripId } = useParams();
@@ -18,9 +19,7 @@ const Trip = () => {
     if (loading) {
         return <div> loading... </div>;
     }
-    if(!itineraries.length){
-        return <div className="mt-4 text-md tracking-tight font-medium text-red-700" role="alert"> No itineraries to display as of yet! </div>
-    }
+  
 
     const restaurant = itineraries.filter((itinerary) => itinerary.category.toLowerCase() === "restaurant");
     const hotel = itineraries.filter((itinerary) => itinerary.category.toLowerCase() === "hotel");
@@ -30,32 +29,37 @@ const Trip = () => {
 
     return(
         <div>
-          <h1 className="text-3xl font-bold tracking-tight"> Your itinerary for {trip.tripName} </h1>  
-            <h2> Restaurant </h2>
+          <h1 className="text-3xl font-bold tracking-tight text-gray-700"> Your itinerary for {trip.tripName} </h1>  
+            <h2 className="text-xl font-bold tracking-tight text-gray-700"> Restaurant </h2>
+            <AddPlan category="restaurant"/>
             <ItineraryCard
             category="restaurant"
             tripId={tripId}
             itineraries={restaurant}
             />
-            <h2> Hotel </h2>
+            <h2 className="text-xl font-bold tracking-tight text-gray-700"> Hotel </h2>
+            <AddPlan category="hotel"/>
             <ItineraryCard
             category="hotel"
             tripId={tripId}
             itineraries={hotel}
             />
-            <h2> Transportation </h2>
+            <h2 className="text-xl font-bold tracking-tight text-gray-700"> Transportation </h2>
+            <AddPlan category="transportation"/>
             <ItineraryCard
             category="transportation"
             tripId={tripId}
             itineraries={transportation}
             />
-            <h2> Flight </h2>
+            <h2 className="text-xl font-bold tracking-tight text-gray-700"> Flight </h2>
+            <AddPlan category="flight"/>
             <ItineraryCard
             category="flight"
             tripId={tripId}
             itineraries={flight}
             />
-            <h2> Activity </h2>
+            <h2 className="text-xl font-bold tracking-tight text-gray-700"> Activity </h2>
+            <AddPlan category="activity"/>
             <ItineraryCard
             category="activity"
             tripId={tripId}

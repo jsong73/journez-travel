@@ -1,9 +1,7 @@
 import React, {useState} from "react";
-import Auth from "../utils/auth";
+import {useParams} from "react-router-dom";
 import CreateItineraryButton from "../components/CreateItineraryButton";
 import UpdateItineraryButton from "../components/UpdateItineraryButton";
-
-const userId = Auth.getProfile()?.data?._id;
 
 const ItineraryForm = ({ 
     itineraryId,
@@ -15,18 +13,19 @@ const ItineraryForm = ({
     price,
     notes,
     paid }) => {
-
+    
+    const { tripId } = useParams();
 
     const [formState, setFormState] = useState({
+        tripId: tripId,
         category: category ? category : "",
-        categoryName: categoryName ? category : "",
+        categoryName: categoryName ? categoryName : "",
         location: location ? location : "",
         startDate: startDate ? startDate : "",
         endDate: endDate ? endDate : "",
         price: price ? price : "",
         notes: notes ? notes : "",
-        paid: paid ? paid : "",
-        userId: userId,
+        paid: paid ? paid : false,
     });
 
     const handleChange = (event) => {
@@ -42,13 +41,14 @@ const ItineraryForm = ({
 
 let button;
 if(itineraryId){
-    button = <CreateItineraryButton formState={formState} />
+    button = <UpdateItineraryButton formState={formState} />
 } else {
-    button = <UpdateItineraryButton formState={formState} itineraryId={itineraryId} />
+    button = <CreateItineraryButton formState={formState} itineraryId={itineraryId} />
 }
 
     return(
         <div className="flex justify-center items-center">
+        
             <form>
                 <div className="mb-6">
                     <label className="block text-gray-700 text-sm font-bold mb-2"> Name of {category} </label> 
@@ -65,7 +65,7 @@ if(itineraryId){
                         className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         name="location"
                         type="text"
-                        placeholder="Address or location"
+                        placeholder="Address"
                         value={formState.location}
                         onChange={handleChange}/>
              
@@ -93,7 +93,7 @@ if(itineraryId){
                         className="shadow appearance-none border rounded w-full py-2 px-3 mb-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         name="price"
                         type="text"
-                        placeholder="How much did this cost?"
+                        placeholder="$"
                         value={formState.price}
                         onChange={handleChange}/>
                 </div>

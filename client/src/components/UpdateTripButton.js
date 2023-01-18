@@ -2,7 +2,7 @@ import { useMutation } from "@apollo/client";
 import React from "react";
 import { UPDATE_TRIP } from "../utils/mutations";
 
-const UpdateTripButton = ({ formState, tripId }) =>{
+const UpdateTripButton = ({ formState, tripId }) => {
     // console.log(formState.tripName)
     // console.log(formState.description)
     // console.log(formState.location)

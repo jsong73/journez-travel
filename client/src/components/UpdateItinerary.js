@@ -41,8 +41,9 @@ return(
     <div>
         <button 
             onClick={openModal}
-            className="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out "
+            className="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
             type="submit"> Edit itinerary </button>
+        
 
         <Modal
             isOpen={modalIsOpen}
@@ -55,7 +56,7 @@ return(
             type="submit"
             onClick={closeModal}> Close </button>
     
-            <h1 className="mt-10 mb-3 px-10 py-6 text-3xl font-bold tracking-tight"> Edit Itinerary </h1>
+            <h1 className="mt-8 px-12 py-5  text-3xl font-bold tracking-tight"> Edit Itinerary </h1>
     
         <ItineraryForm 
             itineraryId={itineraryId}

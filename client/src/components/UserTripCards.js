@@ -24,14 +24,14 @@ if(!trips.length){
                     isLoggedInUser= {Auth.loggedIn() === true }/> 
                     </div>
 
-                    <h1 className="italic underline text-gray-700 text-3xl font-bold tracking-tight"> {trip.tripName}</h1>
+                    <h1 className="italic underline text-3xl font-bold tracking-tight text-gray-700"> {trip.tripName}</h1>
                     </Link>
 
 
-                    <div className="text-gray-700 text-sm font-bold"> Description: {trip.description}</div>
-                    <div className="text-gray-700 text-sm font-bold"> Location: {trip.location}</div>
-                    <div className="text-gray-700 text-sm font-bold"> Start date: {trip.startDate}</div>
-                    <div className="text-gray-700 text-sm font-bold"> End date: {trip.endDate}</div>
+                    <div className="text-md tracking-tight text-gray-700"> Description: {trip.description}</div>
+                    <div className="text-md tracking-tight text-gray-700"> Location: {trip.location}</div>
+                    <div className="text-md tracking-tight text-gray-700"> Start date: {trip.startDate}</div>
+                    <div className="text-md tracking-tight text-gray-700"> End date: {trip.endDate}</div>
                     
                     
                     <UpdateTrip 

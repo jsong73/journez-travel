@@ -3,6 +3,7 @@ import UpdateItinerary from "../components/UpdateItinerary";
 import DeleteItinerary from "../components/DeleteItinerary";
 import Auth from "../utils/auth";
 
+
 const ItineraryCard = ({
     tripId,
     itineraries,
@@ -13,7 +14,7 @@ const ItineraryCard = ({
     if(!itineraries.length){
         return `No ${category} booked as of yet!` 
     }
-console.log(itineraries.categoryName)
+
     return(
         <div>
             {itineraries.map((itinerary) => (
@@ -25,12 +26,12 @@ console.log(itineraries.categoryName)
                 isLoggedInUser= {Auth.loggedIn() === true} />
 
                 {/* <h1>{itinerary.category}</h1> */}
-                <div> Name: {itinerary.categoryName}</div>
-                <div> Location: {itinerary.location}</div>
-                <div> Start Date: {itinerary.startDate}</div>
-                <div> End Date: {itinerary.endDate}</div>
-                <div> Notes: {itinerary.notes}</div>
-                <div> Price: {itinerary.price}</div>
+                <div className="text-md tracking-tight text-gray-700"> Name: {itinerary.categoryName}</div>
+                <div className="text-md tracking-tight text-gray-700"> Location: {itinerary.location}</div>
+                <div className="text-md tracking-tight text-gray-700"> Start Date: {itinerary.startDate}</div>
+                <div className="text-md tracking-tight text-gray-700"> End Date: {itinerary.endDate}</div>
+                <div className="text-md tracking-tight text-gray-700"> Notes: {itinerary.notes}</div>
+                <div className="text-md tracking-tight text-gray-700"> Price: ${itinerary.price}</div>
                 {/* <div>{itinerary.paid}</div> */}
 
 
