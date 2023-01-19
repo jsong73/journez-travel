@@ -30,14 +30,13 @@ const removeItineraryHandler = async ( itineraryId, tripId ) => {
         <div>
             {isLoggedInUser && (
                 <button
+                className="float-right"
                 onClick={() => removeItineraryHandler( itineraryId, tripId)}>
                 <img 
                 src={Delete} 
                 alt="delete-btn" 
                 width="20px"/>
                 </button>
-
-
             )}
         </div>
     )

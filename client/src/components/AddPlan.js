@@ -33,8 +33,8 @@ Modal.setAppElement("#root");
   return(
     <div>
     <button 
+    className="mb-4 mt-2"
         onClick={openModal}
-     
         type="submit">  <img src= {AddButton} alt="addplan-btn" width="19px"/></button>
 
     <Modal

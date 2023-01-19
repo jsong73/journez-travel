@@ -39,7 +39,10 @@ return(
     <div>
         <button 
             onClick={openModal}
-            className="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+            className="inline-block px-7 py-3 mt-3 bg-blue-600 text-white font-medium text-sm 
+            leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg- 
+            blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 
+            active:shadow-lg transition duration-150 ease-in-out"
             type="submit"> Edit trip </button>
 
     <Modal
@@ -50,7 +53,8 @@ return(
         contentLabel="Edit trip">
 
     <button 
-        className=" bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-right text-sm leading-snug uppercase" 
+        className=" bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded 
+        focus:outline-none focus:shadow-outline float-right text-sm leading-snug uppercase" 
         type="submit"
         onClick={closeModal}> Close </button>
 

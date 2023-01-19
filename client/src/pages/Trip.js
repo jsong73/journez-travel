@@ -32,7 +32,7 @@ const Trip = () => {
           <h1 className="mt-5 text-3xl font-bold tracking-tight text-gray-700 justify-center text-center"> Your itinerary for {trip.tripName} </h1>  
         
           
-            <div className="block max-w-sm p-6 mb-5 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-white-800 dark:border-white-700 dark:hover:bg-white-700">                       
+            <div className="justify-center text-center block max-w-sm p-6 mb-5 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-white-800 dark:border-white-700 dark:hover:bg-white-700">                       
             <h1 className="text-xl font-bold tracking-tight text-gray-700">Restaurant</h1>
             <AddPlan category="restaurant"/>
             <ItineraryCard
@@ -41,7 +41,7 @@ const Trip = () => {
             itineraries={restaurant}
             /> </div>
 
-            <div className="block max-w-sm p-6 mb-5 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-white-800 dark:border-white-700 dark:hover:bg-white-700">
+            <div className="justify-center text-center block max-w-sm p-6 mb-5 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-white-800 dark:border-white-700 dark:hover:bg-white-700">
             <h1 className="text-xl font-bold tracking-tight text-gray-700">Hotel</h1>
             <AddPlan category="hotel"/>
             <ItineraryCard
@@ -49,7 +49,7 @@ const Trip = () => {
             tripId={tripId}
             itineraries={hotel}
             /> </div>
-            <div className="block max-w-sm p-6 mb-5 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-white-800 dark:border-white-700 dark:hover:bg-white-700"> 
+            <div className="justify-center text-center block max-w-sm p-6 mb-5 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-white-800 dark:border-white-700 dark:hover:bg-white-700"> 
             <h1 className="text-xl font-bold tracking-tight text-gray-700">Transportation</h1> 
             <AddPlan category="transportation"/>
             <ItineraryCard
@@ -57,7 +57,7 @@ const Trip = () => {
             tripId={tripId}
             itineraries={transportation}
             /> </div>
-            <div className="block max-w-sm p-6 mb-5 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-white-800 dark:border-white-700 dark:hover:bg-white-700"> 
+            <div className="justify-center text-center block max-w-sm p-6 mb-5 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-white-800 dark:border-white-700 dark:hover:bg-white-700"> 
             <h1 className="text-xl font-bold tracking-tight text-gray-700">Flight</h1>
             <AddPlan category="flight"/>
             <ItineraryCard
@@ -65,7 +65,7 @@ const Trip = () => {
             tripId={tripId}
             itineraries={flight}
             /> </div>
-            <div className="block max-w-sm p-6 mb-5 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-white-800 dark:border-white-700 dark:hover:bg-white-700"> 
+            <div className="justify-center text-center block max-w-sm p-6 mb-5 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-white-800 dark:border-white-700 dark:hover:bg-white-700"> 
             <h1 className="text-xl font-bold tracking-tight text-gray-700">Activity</h1>
             <AddPlan category="activity"/>
             <ItineraryCard

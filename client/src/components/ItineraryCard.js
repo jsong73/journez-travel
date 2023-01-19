@@ -20,7 +20,6 @@ const ItineraryCard = ({
             {itineraries.map((itinerary) => (
                 <div key={itinerary._id}> 
 
-                
                 <DeleteItinerary 
                 tripId={tripId}
                 itineraryId={itinerary._id}
