@@ -21,7 +21,7 @@ const UserTrips = () => {
     return(
 
             <div>
-                <h1 className="text-3xl text-gray-700 font-bold tracking-tight justify-center text-center"> Your trips </h1>
+                <h1 className="mt-5 text-3xl text-gray-700 font-bold tracking-tight justify-center text-center"> Your trips </h1>
                     <UserTripCards trips={userTrips}/>
             </div>  
 

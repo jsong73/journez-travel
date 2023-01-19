@@ -39,6 +39,7 @@ const removeTripHandler = async ( tripId ) => {
         <div>
             {isLoggedInUser && (
                 <button
+                className="float-right"
                 onClick={() => removeTripHandler(tripId)}>
                 <img 
                 src={Delete} 

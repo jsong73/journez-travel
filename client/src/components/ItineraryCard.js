@@ -19,6 +19,7 @@ const ItineraryCard = ({
         <div>
             {itineraries.map((itinerary) => (
                 <div key={itinerary._id}> 
+
                 
                 <DeleteItinerary 
                 tripId={tripId}
