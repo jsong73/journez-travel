@@ -8,7 +8,7 @@ const UserTripCards = ({ trips }) => {
 // console.log(trips)
 
 if(!trips.length){
-    return <div className="mt-4 text-md tracking-tight font-medium text-red-700" role="alert"> No trips booked as of yet! </div>
+    return <div className="text-center mt-4 text-md tracking-tight font-medium text-red-700" role="alert"> No trips booked as of yet! </div>
 }
     return(
          <div className="grid md:mb-12 md:grid-cols-4 flex-col items-center justify-center p-12 text-center">
