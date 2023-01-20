@@ -35,7 +35,7 @@ const UpdateItinerary = ({
     function closeModal() {
         setIsOpen(false);
     }
-    
+    // console.log(itineraryId)
 
 return(
     <div>

@@ -28,6 +28,7 @@ const ItineraryForm = ({
         paid: paid ? paid : false,
     });
 
+
     const handleChange = (event) => {
     const { name, value } = event.target;
     setFormState((prevState) => {
@@ -41,9 +42,9 @@ const ItineraryForm = ({
 
 let button;
 if(itineraryId){
-    button = <UpdateItineraryButton formState={formState} />
+    button = <UpdateItineraryButton formState={formState} itineraryId={itineraryId} />
 } else {
-    button = <CreateItineraryButton formState={formState} itineraryId={itineraryId} />
+    button = <CreateItineraryButton formState={formState} />
 }
 
     return(
@@ -53,7 +54,8 @@ if(itineraryId){
                 <div className="mb-6">
                     <label className="block text-gray-700 text-sm font-bold mb-2"> Name of {category} </label> 
                         <input
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            className="shadow appearance-none border rounded w-full py-2 px-3 
+                            text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             name="categoryName"
                             type="text"
                             placeholder="Name"
@@ -62,7 +64,8 @@ if(itineraryId){
                  </div>        
                 <label className="block text-gray-700 text-sm font-bold mb-2"> Location </label>
                     <input
-                        className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        className="shadow appearance-none border rounded w-full py-4 px-3 text- 
+                        gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         name="location"
                         type="text"
                         placeholder="Address"
@@ -72,7 +75,8 @@ if(itineraryId){
                 <div className="mb-2 mt-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2"> Start date </label>
                     <input
-                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text- 
+                        gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         type="date"
                         name="startDate"
                         value={formState.startDate}
@@ -81,7 +85,8 @@ if(itineraryId){
                 <div className="mb-2 mt-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2"> End date </label>
                     <input
-                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text- 
+                        gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         type="date"
                         name="endDate"
                         value={formState.endDate}
@@ -90,7 +95,8 @@ if(itineraryId){
                 <div className="mb-2 mt-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2"> Price </label>
                     <input
-                        className="shadow appearance-none border rounded w-full py-2 px-3 mb-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        className="shadow appearance-none border rounded w-full py-2 px-3 mb-3 
+                        text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         name="price"
                         type="text"
                         placeholder="$"
@@ -99,12 +105,26 @@ if(itineraryId){
                 </div>
                 <label className="block text-gray-700 text-sm font-bold mb-2"> Notes </label>
                     <textarea
-                        className="shadow appearance-none border rounded w-full py-2 px-3 mb-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        className="shadow appearance-none border rounded w-full py-2 px-3 mb-3 
+                        text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         name="notes"
                         placeholder="Any additional information?"
                         value={formState.notes}
                         onChange={handleChange}>
                     </textarea>     
+
+                <label className="block text-gray-700 text-sm font-bold mb-2"> Has this been paid? 
+                </label>   
+                    <input 
+                        type="checkbox" 
+                        value={formState.paid} 
+                        defaultChecked={formState.paid}
+                        name="paid"
+                        onChange={handleChange}
+                        className="w-4 h-4 mb-4 text-blue-600 bg-gray-100 border-gray-300 rounded 
+                        focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 
+                        focus:ring-2 dark:border-gray-600"/>
+
          
         <div> {button} </div>
         </form>

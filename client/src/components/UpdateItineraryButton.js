@@ -26,8 +26,8 @@ const UpdateItineraryButton = ({ formState, itineraryId }) =>{
                     location: formState.location,
                     startDate: formState.startDate,
                     endDate: formState.endDate,
-                    price: formState.price,
                     notes: formState.notes,
+                    price: formState.price,
                     paid: formState.paid,
                 }
             });

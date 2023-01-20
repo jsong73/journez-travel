@@ -32,6 +32,7 @@ const ItineraryCard = ({
                 <div className="text-md tracking-tight text-gray-700"> End Date: {itinerary.endDate}</div>
                 <div className="text-md tracking-tight text-gray-700"> Notes: {itinerary.notes}</div>
                 <div className="text-md tracking-tight text-gray-700"> Price: ${itinerary.price}</div>
+                <div className="text-md tracking-tight text-gray-700"> Paid: {`${itinerary.paid ? true : false }`}</div>
 
                 <UpdateItinerary
                 itineraryId={itinerary._id}
@@ -42,7 +43,7 @@ const ItineraryCard = ({
                 endDate={itinerary.endDate}
                 notes={itinerary.notes}
                 price={itinerary.price}
-                paid={true} />
+                paid={itinerary.paid} />
 
 
                 </div>
