@@ -34,7 +34,7 @@ const Trip = () => {
           <div className="grid md:mb-12 md:grid-cols-5 flex-col items-center justify-center p-12 
            text-center">
 
-            <div className="block max-w-sm p-6 mb-5 bg-white border border-gray-200 rounded-lg 
+            <div className="min-h-full block max-w-sm p-6 mb-5 bg-white border border-gray-200 rounded-lg 
             shadow-md hover:bg-gray-100 dark:bg-white-800 dark:border-white-700 dark:hover:bg- 
             white-700">                       
             <h1 className="text-xl font-bold tracking-tight text-gray-700">Restaurant</h1>
@@ -45,7 +45,7 @@ const Trip = () => {
             itineraries={restaurant}
             /> </div>
 
-            <div className="block max-w-sm p-6 mb-5 bg-white border border-gray-200 rounded-lg 
+            <div className="min-h-full block max-w-sm p-6 mb-5 bg-white border border-gray-200 rounded-lg 
             shadow-md hover:bg-gray-100 dark:bg-white-800 dark:border-white-700 dark:hover:bg-     
             white-700">
             <h1 className="text-xl font-bold tracking-tight text-gray-700">Hotel</h1>
@@ -56,7 +56,7 @@ const Trip = () => {
             itineraries={hotel}
             /> </div>
             
-            <div className="block max-w-sm p-6 mb-5 bg-white border border-gray-200 rounded-lg 
+            <div className="min-h-full block max-w-sm p-6 mb-5 bg-white border border-gray-200 rounded-lg 
             shadow-md hover:bg-gray-100 dark:bg-white-800 dark:border-white-700 dark:hover:bg- 
             white-700"> 
             <h1 className="text-xl font-bold tracking-tight text-gray-700">Transportation</h1> 
@@ -67,7 +67,7 @@ const Trip = () => {
             itineraries={transportation}
             /> </div>
 
-            <div className="block max-w-sm p-6 mb-5 bg-white border border-gray-200 rounded-lg  
+            <div className="min-h-full block max-w-sm p-6 mb-5 bg-white border border-gray-200 rounded-lg  
             shadow-md hover:bg-gray-100 dark:bg-white-800 dark:border-white-700 dark:hover:bg- 
             white-700"> 
             <h1 className="text-xl font-bold tracking-tight text-gray-700">Flight</h1>
@@ -78,7 +78,7 @@ const Trip = () => {
             itineraries={flight}
             /> </div>
 
-            <div className="block max-w-sm p-6 mb-5 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-white-800 dark:border-white-700 dark:hover:bg-white-700"> 
+            <div className="min-h-full block max-w-sm p-6 mb-5 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-white-800 dark:border-white-700 dark:hover:bg-white-700"> 
             <h1 className="text-xl font-bold tracking-tight text-gray-700">Activity</h1>
             <AddPlan category="activity"/>
             <ItineraryCard
