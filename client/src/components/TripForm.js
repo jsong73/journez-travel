@@ -93,8 +93,6 @@ if(!tripId){
                             name="endDate"
                             value={formState.endDate}
                             onChange={handleChange}/>
-        
-            
         </div>
     
         <div>{button}</div>
