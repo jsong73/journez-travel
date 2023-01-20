@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Auth from "../utils/auth";
-
+import Logo from "../images/websitelogo.png"
 
 const Navbar = () => {
     const logout = (event) => {
@@ -13,7 +13,7 @@ const Navbar = () => {
   
         <nav className="p-4 border-gray-200  bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
             <div className="container flex flex-wrap items-center justify-between mx-auto">
-                <div className="text-3xl font-bold tracking-tight whitespace-nowrap dark:text-white"> journEZ </div>
+                <img className="text-3xl font-bold tracking-tight whitespace-nowrap dark:text-white" src={Logo} width="100"/>
                 {Auth.loggedIn() ? (
                 <>
                 <ul className= "flex mt-4 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
