@@ -28,7 +28,6 @@ const ItineraryForm = ({
         paid: paid ? paid : false,
     });
 
-
     const handleChange = (event) => {
     const { name, value } = event.target;
     setFormState((prevState) => {

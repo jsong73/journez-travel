@@ -34,7 +34,7 @@ export const ADD_TRIP = gql`
 
 export const UPDATE_TRIP = gql`
     mutation updateTrip($tripId: ID, $tripName: String, $description: String, $location: String, $startDate: String, $endDate: String) {
-        updateTrip(tripId: $tripId, tripName: $tripName, description: $description, location: $location, startDate: $startDate, endDate: $endDate) {
+        updateTrip(tripId: $tripId, tripName: $tripName, decription: $description, location: $location, startDate: $startDate, endDate: $endDate) {
             tripName
         }
     }
