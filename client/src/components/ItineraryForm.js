@@ -25,7 +25,7 @@ const ItineraryForm = ({
         endDate: endDate ? endDate : "",
         price: price ? price : "",
         notes: notes ? notes : "",
-        paid: paid ? paid : false,
+        paid: paid ? paid : 0,
     });
 
     const handleChange = (event) => {
@@ -45,6 +45,7 @@ if(itineraryId){
 } else {
     button = <CreateItineraryButton formState={formState} />
 }
+
 
     return(
         <div className="flex justify-center items-center">
