@@ -26,18 +26,12 @@ const ItineraryCard = ({
                 isLoggedInUser= {Auth.loggedIn() === true} />
 
               
-                <div className="text-md tracking-tight text-gray-700"> Name: 
-                {itinerary.categoryName}</div>
-                <div className="text-md tracking-tight text-gray-700"> Location: 
-                {itinerary.location}</div>
-                <div className="text-md tracking-tight text-gray-700"> Start Date: 
-                {itinerary.startDate}</div>
-                <div className="text-md tracking-tight text-gray-700"> End Date: 
-                {itinerary.endDate}</div>
-                <div className="text-md tracking-tight text-gray-700"> Notes: {itinerary.notes} 
-                </div>
-                <div className="text-md tracking-tight text-gray-700"> Price: ${itinerary.price} 
-                </div>
+                <div className="text-md tracking-tight text-gray-700"> Name: {itinerary.categoryName}</div>
+                <div className="text-md tracking-tight text-gray-700"> Location: {itinerary.location}</div>
+                <div className="text-md tracking-tight text-gray-700"> Start Date: {itinerary.startDate}</div>
+                <div className="text-md tracking-tight text-gray-700"> End Date: {itinerary.endDate}</div>
+                <div className="text-md tracking-tight text-gray-700"> Notes: {itinerary.notes}</div>
+                <div className="text-md tracking-tight text-gray-700"> Price: ${itinerary.price} </div>
                 <div className="text-md tracking-tight text-gray-700"> Paid: {`${itinerary.paid ? 
                 true : false }`}</div>
 
