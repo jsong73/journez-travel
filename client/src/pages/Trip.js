@@ -20,7 +20,6 @@ const Trip = () => {
         return <div> loading... </div>;
     }
   
-
     const restaurant = itineraries.filter((itinerary) => itinerary.category.toLowerCase() === "restaurant");
     const hotel = itineraries.filter((itinerary) => itinerary.category.toLowerCase() === "hotel");
     const transportation = itineraries.filter((itinerary) => itinerary.category.toLowerCase() === "transportation");
