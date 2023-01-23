@@ -15,7 +15,6 @@ const Trip = () => {
     const itineraries = trip.itineraries || [];
    
     // console.log(itineraries)
-
     if (loading) {
         return <div> loading... </div>;
     }
