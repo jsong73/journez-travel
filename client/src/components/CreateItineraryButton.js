@@ -2,6 +2,7 @@ import React from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_ITINERARY } from "../utils/mutations";
 
+//to convert string to boolean 
 let myBool; 
 const booleanTestFunc = (formState) => {
     if(typeof formState.paid === "string") {

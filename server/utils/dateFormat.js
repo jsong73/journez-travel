@@ -42,8 +42,9 @@ const addDateSuffix = (date) => {
     const formattedMonth = months[dateObj.getMonth()];
   
     const dayOfMonth = dateSuffix
-      ? addDateSuffix(dateObj.getDate()+1)
+      ? addDateSuffix(dateObj.getDate())
       : dateObj.getDate();
+      //getDate()+1?
   
     const year = dateObj.getFullYear();
     // let hour =
