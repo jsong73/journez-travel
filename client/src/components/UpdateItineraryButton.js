@@ -2,6 +2,17 @@ import { useMutation } from "@apollo/client";
 import React from "react";
 import { UPDATE_ITINERARY } from "../utils/mutations";
 
+let myBool; 
+const booleanTestFunc = (formState) => {
+    if(typeof formState.paid === "string") {
+        if(formState.paid === "false") {
+             myBool = (formState.paid === 'false');
+        } else {
+            myBool = (!formState.paid === 'true');
+        }
+     }
+}
+
 const UpdateItineraryButton = ({ formState, itineraryId }) =>{
 //    console.log(formState.category)
 //    console.log(formState.categoryName)
@@ -17,7 +28,9 @@ const UpdateItineraryButton = ({ formState, itineraryId }) =>{
 
     const updateItineraryHandler = async (event) => {
         event.preventDefault();
+        booleanTestFunc(formState);
         try{
+            // console.log("test for type", typeof formState.paid);
             const { data } = await updateItinerary({
                 variables: {
                     itineraryId: itineraryId,
@@ -28,7 +41,7 @@ const UpdateItineraryButton = ({ formState, itineraryId }) =>{
                     endDate: formState.endDate,
                     notes: formState.notes,
                     price: formState.price,
-                    paid: formState.paid,
+                    paid: myBool,
                 }
             });
     

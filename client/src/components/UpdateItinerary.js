@@ -71,7 +71,8 @@ return(
             endDate={endDate}
             notes={notes}
             price={price}
-            paid={paid}/>
+            paid={paid}
+        />
 
     </Modal>
 

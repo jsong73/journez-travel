@@ -28,6 +28,7 @@ const Trip = () => {
     const activity = itineraries.filter((itinerary) => itinerary.category.toLowerCase() === "activity");
 
     return(
+        // Written a .map feature and iterate through an array of the existing array and iterate. 
         <div>
           <h1 className="mt-5 text-3xl font-bold tracking-tight text-gray-700 text-center"> Your itinerary for {trip.tripName} </h1>  
         

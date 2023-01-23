@@ -25,7 +25,7 @@ const ItineraryForm = ({
         endDate: endDate ? endDate : "",
         price: price ? price : "",
         notes: notes ? notes : "",
-        paid: paid ? paid : 0,
+        paid: paid ? paid : false,
     });
 
     const handleChange = (event) => {
@@ -41,6 +41,7 @@ const ItineraryForm = ({
 
 let button;
 if(itineraryId){
+    // console.log("at itineraryForm is boolean", typeof formState.paid)
     button = <UpdateItineraryButton formState={formState} itineraryId={itineraryId} />
 } else {
     button = <CreateItineraryButton formState={formState} />
@@ -123,7 +124,8 @@ if(itineraryId){
                         onChange={handleChange}
                         className="w-4 h-4 mb-4 text-blue-600 bg-gray-100 border-gray-300 rounded 
                         focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 
-                        focus:ring-2 dark:border-gray-600"/>
+                        focus:ring-2 dark:border-gray-600"
+                    />
 
          
         <div> {button} </div>
