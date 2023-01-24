@@ -25,7 +25,7 @@ const ItineraryForm = ({
         endDate: endDate ? endDate : "",
         price: price ? price : "",
         notes: notes ? notes : "",
-        paid: !paid ? paid : false,
+        paid: paid ? paid : false,
     });
 
     const handleChange = (event) => {
@@ -117,7 +117,7 @@ if(itineraryId){
                     <input 
                         type="checkbox" 
                         value={formState.paid} 
-                        defaultChecked={formState}
+                        defaultChecked={formState.paid}
                         name="paid"
                         onChange={handleChange}
                         className="w-4 h-4 mb-4 text-blue-600 bg-gray-100 border-gray-300 rounded 
