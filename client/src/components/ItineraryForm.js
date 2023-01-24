@@ -46,8 +46,6 @@ if(itineraryId){
 } else {
     button = <CreateItineraryButton formState={formState} />
 }
-
-
     return(
         <div className="flex justify-center items-center">
         
@@ -132,7 +130,6 @@ if(itineraryId){
         </form>
         </div>
     )
-
-    }
+}
 
 export default ItineraryForm;
