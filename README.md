@@ -3,7 +3,6 @@
 https://journez-travel.herokuapp.com/  
 
 journEZ is a a travel website that allows users to easily create trips and organize their trip itineraries and costs all from one platform.
-This was built using the MERNG stack.  
 
 # Technology
 
