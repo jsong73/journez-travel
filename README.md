@@ -2,7 +2,7 @@
 
 https://journez-travel.herokuapp.com/  
 
-journEZ is a a travel website that allows users to easily create trips and organize their trip itineraries and costs all from one platform.
+Discover journEZ, your ultimate travel companion. Effortlessly plan trips, organize itineraries, and track expenses, all on one user-friendly platform. To make your travel journey easy.
 
 ## Technology
 
